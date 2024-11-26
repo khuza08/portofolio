@@ -1,0 +1,232 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth; /* Menambahkan efek scroll yang lebih halus */
+}
+
+/* Body and page layout */
+body {
+   
+    font-family: poppins, serif; 
+    color: white;
+    background-color: #000000;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;  /* Menempatkan konten di tengah secara horizontal */
+    align-items: center;      /* Menempatkan konten di tengah secara vertikal */
+    height: 100vh;            /* Membuat body mengisi penuh layar */
+    flex-direction: column;   /* Agar konten disusun secara vertikal */
+    padding-top: 80px;        /* Memberi jarak antara konten dan header */
+
+    }
+    .video-background {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        overflow: hidden;
+        
+      }
+      
+      .video-background video {
+        position: fixed ;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1; /* Let other content appear above */
+      }
+      
+      .content {
+        position: relative;
+        z-index: 1; /* To ensure it's above the video */
+        text-align: center;
+        color: white;
+      }
+      
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    width: 100%; /* Pastikan header mengambil seluruh lebar */
+    position: fixed;  /* Agar header tetap di atas saat scroll */
+    top: 0;           /* Posisi di atas */
+    left: 0;
+    z-index: 1000;     /* Pastikan header tetap di atas konten */
+}
+
+header .logo h1 {
+    font-size: 2em;
+    font-style: bold;
+}
+
+header .nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+}
+
+/* Navigation for mobile */
+@media (max-width: 768px) {
+    header .nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+#aboutme {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  #aboutme.visible {
+    opacity: 1;
+  }
+  
+/* Main content styling */
+.About {
+    display: flex;
+    flex-direction: column;   /* Mengatur konten dalam satu kolom */
+    justify-content: center;  /* Memusatkan konten secara vertikal */
+    align-items: center;      /* Memusatkan konten secara horizontal */
+    text-align: center;
+    padding: 80px;
+    flex: 0;                  /* Mengisi ruang yang tersedia */
+    margin-top: 50%;
+}
+
+/* Main Heading and Paragraph Styling */
+main h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Icon colors */
+.fa-github {
+    color: white;
+}
+.fa-instagram {
+    color: white;
+}
+.fa-telegram {
+    color: white;
+}
+
+/* Add a hover effect for icons */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Footer Styling */
+footer {
+    color: white;
+    text-align: center;
+    padding: 10px 0;;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Gallery Section Styling */
+#gallery {
+    padding: 40px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 3%;
+    border-radius: 10px;
+    background: linear-gradient(140deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0; /* Memulai dengan transparan */
+    transition: opacity 0.8s ease-in-out; /* Transisi untuk animasi */
+    box-shadow: 0px 0px 20px 10px rgba(255, 254, 254, 0.08);
+}
+
+#gallery.active {
+    opacity: 1; /* Ketika menjadi aktif, muncul */
+}
+
+
+/* Gallery container */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transform: translateY(0px);
+}
+
+.gallery-container.active {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+.gallery-container.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* Gallery items */
+.gallery-item {
+    width: 250px; /* Ukuran gambar */
+    height: 250px;
+    overflow: hidden; /* Memastikan gambar tidak keluar dari area item */    
+   transition-duration: 0.25s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menjaga proporsi gambar tanpa distorsi */
+    
+}
+
+/* Hover effect pada gallery items */
+.gallery-item:hover, .gallery-item:focus, .gallery-item:active {
+    transform: scale(1.06); /* Memperbesar gambar sedikit */    
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+}
+ 
+
+    
+
+/* Responsif untuk perangkat mobile */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 100%; /* Gambar mengambil 100% lebar pada layar kecil */
+        height: auto; /* Menyesuaikan tinggi agar proporsional */
+    }
+    .social-icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
