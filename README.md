@@ -1,5 +1,4 @@
-**Yet Another Simple Portofolio Website**
-YASPW - 2K24
+**Yet Another Simple Portofolio Website** | YASPW - 2K24
 
 **Structures**
 ```
