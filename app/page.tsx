@@ -24,11 +24,11 @@ export default function HomePage() {
             <h1 className="text-4xl mb-4 font-mono font-light">
               Welcome to my <span className="italic font-semibold">portofolio</span>
             </h1>
-            <p className="text-xl text-white max-w-xl font-mono">
+            <p className="text-xl text-white max-w-xl font-mono mb-4">
               Hello I'm <span className="font-mono">huza</span>. Here, you can learn more about me, i try my best to create things with{' '}
               <span role="img" aria-label="heart">❤</span>
             </p>
-            <p className="text-lg text-white/50 mb-6 italic font-mono">
+            <p className="text-lg text-white/50 italic font-mono">
               "eyes are all the same, but they see differently."
             </p>
           </div>
