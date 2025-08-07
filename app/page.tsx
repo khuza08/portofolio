@@ -39,14 +39,13 @@ export default function HomePage() {
       </section>
 
       {/* about */}
-      <section id="about" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+      <section id="about" className="min-h-screen bg-black text-white flex items-center justify-center px-8 py-24">
         <div className="max-w-6xl w-full">
           <h2 className="text-3xl font-bold mb-8 text-center font-mono">About Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
               <div className="absolute top-[-10] left-0 w-24 h-24 bg-red-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
-
               <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Past</h3>
               <p className="text-white/65 font-mono text-sm relative z-10">
                 Started as a curious learner, exploring different technologies and understanding how things work behind the screen.
@@ -55,7 +54,6 @@ export default function HomePage() {
 
             <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
               <div className="absolute top-[-10] left-0 w-24 h-24 bg-yellow-400 rounded-full blur-2xl opacity-40 pointer-events-none" />
-
               <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Present</h3>
               <p className="text-white/65 font-mono text-sm relative z-10">
                 Currently building projects, improving skills in frontend and backend, and trying to create meaningful experiences.
@@ -64,17 +62,60 @@ export default function HomePage() {
 
             <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
               <div className="absolute top-[-10] left-0 w-24 h-24 bg-green-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
-
               <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Future</h3>
               <p className="text-white/65 font-mono text-sm relative z-10">
                 Aiming to become a professional developer, contribute to open-source, and design tools that empower others.
               </p>
             </div>
 
-
           </div>
         </div>
       </section>
+
+<div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
+
+      {/* roadmap */}
+      <section id="education" className="relative bg-black text-white px-8 py-24">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold mb-24 text-center font-mono">Education</h2>
+
+          {/* roadmap line */}
+          <div className="absolute left-1/2 top-64 bottom-0 w-1 bg-white/30 -translate-x-1/2 z-0" />
+
+          <div className="flex flex-col gap-20 relative z-10">
+            {/* item 1 - left */}
+            <div className="flex items-center justify-between relative">
+              <div className="w-1/2 text-right pr-8">
+                <h3 className="text-xl font-semibold font-mono">Junior High School</h3>
+                <p className="text-white/70 font-mono text-sm">Nurul Khoir Islamic Boarding School<br />2020 - 2023</p>
+              </div>
+              <div className="w-5 h-5 bg-white rounded-full z-20" />
+              <div className="w-1/2" />
+            </div>
+
+            {/* item 2 - right */}
+            <div className="flex items-center justify-between relative">
+              <div className="w-1/2" />
+              <div className="w-5 h-5 bg-white rounded-full z-20" />
+              <div className="w-1/2 pl-8 text-left">
+                <h3 className="text-xl font-semibold font-mono">Secondary High School</h3>
+                <p className="text-white/70 font-mono text-sm">Vocational High School Antartika 2 <br />2023 - 2026 (current)</p>
+              </div>
+            </div>
+
+            {/* item 3 - left */}
+            <div className="flex items-center justify-between relative">
+              <div className="w-1/2 text-right pr-8">
+                <h3 className="text-xl font-semibold font-mono">Future</h3>
+                <p className="text-white/70 font-mono text-sm">??? - ???<br />202X - XXXX</p>
+              </div>
+              <div className="w-5 h-5 bg-white rounded-full z-20" />
+              <div className="w-1/2" />
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     </div>
   );
