@@ -15,10 +15,10 @@ function StarIcon({ width = 60, height = 60, fill = "currentColor" }) {
 
 export default function HomePage() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+    <div className="w-full">
 
-      {/* Landing */}
-      <section className="gridvignette relative h-screen snap-start flex items-center justify-center p-8">
+      {/* landing */}
+      <section className="gridvignette relative min-h-screen flex items-center justify-center p-8">
         <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12">
           <div className="flex-1 text-left">
             <h1 className="text-4xl mb-4 font-mono font-light">
@@ -38,13 +38,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="h-screen snap-start bg-black text-white flex items-center justify-center p-8">
+      {/* about */}
+      <section id="about" className="min-h-screen bg-black text-white flex items-center justify-center p-8">
         <div className="max-w-6xl w-full">
           <h2 className="text-3xl font-bold mb-8 text-center font-mono">About Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* Past Card */}
+            {/* past card */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
               <h3 className="text-xl font-semibold mb-2 font-mono">Past</h3>
               <p className="text-white/80 font-mono text-sm">
@@ -52,7 +52,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Present Card */}
+            {/* present card */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
               <h3 className="text-xl font-semibold mb-2 font-mono">Present</h3>
               <p className="text-white/80 font-mono text-sm">
@@ -60,7 +60,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Future Card */}
+            {/* future card */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
               <h3 className="text-xl font-semibold mb-2 font-mono">Future</h3>
               <p className="text-white/80 font-mono text-sm">
@@ -75,5 +75,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
