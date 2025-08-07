@@ -1,26 +1,51 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
 
-body {
-  background: var(--background);
+body, html {
+  background: black;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  body::-webkit-scrollbar {
+  display: none;
+}
+}
+
+.gridvignette {
+  height: 100vh;
+  width: auto;
+  
+  background-image: 
+    radial-gradient(circle, rgba(0, 0, 0, 1), transparent 100%), /* vignette circle on top */
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),  /* vertical grid lines */
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* horizontal grid lines */
+  
+  background-size: 
+    100% 100%,  /* radial gradient covers full element */
+    60px 60px,   /* grid spacing X */
+    60px 60px;   /* grid spacing Y */
+  
+  background-repeat:
+    no-repeat,
+    repeat,
+    repeat;
 }
