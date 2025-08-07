@@ -18,7 +18,7 @@ export default function HomePage() {
     <div className="w-full">
 
       {/* landing */}
-      <section className="gridvignette relative min-h-screen flex items-center justify-center p-8">
+      <section className="border-white/10 border-b gridvignette relative min-h-screen flex items-center justify-center p-8">
         <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12">
           <div className="flex-1 text-left">
             <h1 className="text-4xl mb-4 font-mono font-light">
