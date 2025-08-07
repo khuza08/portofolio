@@ -72,7 +72,7 @@ export default function HomePage() {
         </div>
       </section>
 
-<div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
+      <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
 
       {/* roadmap */}
       <section id="education" className="relative bg-black text-white px-8 py-24">
@@ -116,6 +116,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* skills */}
+      <section id="skills" className="min-h-screen bg-black text-white flex items-center justify-center px-8 py-24">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-3xl font-bold mb-8 text-center font-mono">Skills</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
+              <h3 className="text-xl font-semibold mb-2 font-mono text-white/90">HTML & CSS</h3>
+              <p className="text-white/65 text-sm font-mono">Solid understanding of semantic HTML and responsive CSS design using modern layouts.</p>
+            </div>
+
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
+              <h3 className="text-xl font-semibold mb-2 font-mono text-white/90">JavaScript & React</h3>
+              <p className="text-white/65 text-sm font-mono">Experienced in building dynamic interfaces with React and managing state effectively.</p>
+            </div>
+
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
+              <h3 className="text-xl font-semibold mb-2 font-mono text-white/90">Tailwind CSS</h3>
+              <p className="text-white/65 text-sm font-mono">Comfortable using Tailwind utility-first classes to build clean, responsive UI quickly.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
     </div>
   );
