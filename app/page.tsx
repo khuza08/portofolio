@@ -44,29 +44,33 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold mb-8 text-center font-mono">About Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* past card */}
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
-              <h3 className="text-xl font-semibold mb-2 font-mono">Past</h3>
-              <p className="text-white/80 font-mono text-sm">
+            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
+              <div className="absolute top-[-10] left-0 w-24 h-24 bg-red-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
+
+              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Past</h3>
+              <p className="text-white/65 font-mono text-sm relative z-10">
                 Started as a curious learner, exploring different technologies and understanding how things work behind the screen.
               </p>
             </div>
 
-            {/* present card */}
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
-              <h3 className="text-xl font-semibold mb-2 font-mono">Present</h3>
-              <p className="text-white/80 font-mono text-sm">
+            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
+              <div className="absolute top-[-10] left-0 w-24 h-24 bg-yellow-400 rounded-full blur-2xl opacity-40 pointer-events-none" />
+
+              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Present</h3>
+              <p className="text-white/65 font-mono text-sm relative z-10">
                 Currently building projects, improving skills in frontend and backend, and trying to create meaningful experiences.
               </p>
             </div>
 
-            {/* future card */}
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md">
-              <h3 className="text-xl font-semibold mb-2 font-mono">Future</h3>
-              <p className="text-white/80 font-mono text-sm">
+            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
+              <div className="absolute top-[-10] left-0 w-24 h-24 bg-green-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
+
+              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Future</h3>
+              <p className="text-white/65 font-mono text-sm relative z-10">
                 Aiming to become a professional developer, contribute to open-source, and design tools that empower others.
               </p>
             </div>
+
 
           </div>
         </div>
