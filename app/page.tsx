@@ -382,8 +382,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section>
-        <div className="min-h-screen"></div>
+      <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
+
+      {/** project */}
+      <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
+        <div className="max-w-6xl w-full">
+          <h2 className="text-3xl font-bold mb-8 text-center font-mono">My Projects</h2>
+
+          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
+            Projects that i create with ❤
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+          </div>
+
+        </div>
       </section>
 
     </div>
