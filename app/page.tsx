@@ -39,7 +39,7 @@ export default function HomePage() {
       </section>
 
       {/* about */}
-      <section id="about" className="min-h-screen bg-black text-white flex items-center justify-center px-8 py-24">
+      <section id="about" className="min-h-screen  text-white flex items-center justify-center px-8 py-24">
         <div className="max-w-6xl w-full">
           <h2 className="text-3xl font-bold mb-8 text-center font-mono">About Me</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -75,7 +75,7 @@ export default function HomePage() {
       <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
 
       {/* roadmap */}
-      <section id="education" className="relative min-h-screen bg-black text-white px-8 py-24">
+      <section id="education" className="relative min-h-screen  text-white px-8 py-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold mb-24 text-center font-mono">Education</h2>
 
@@ -120,7 +120,7 @@ export default function HomePage() {
 
 
       {/* skills */}
-      <section id="skills" className="min-h-screen bg-black text-white flex items-center justify-center px-8 py-24">
+      <section id="skills" className="min-h-screen  text-white flex items-center justify-center px-8 py-24">
         <div className="max-w-6xl w-full">
           <h2 className="text-3xl font-bold text-center font-mono">Skills</h2>
           <p className="text-center text-white/65 font-mono italic">technical proficiencies</p>
