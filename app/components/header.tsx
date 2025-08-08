@@ -14,11 +14,11 @@ export default function Header() {
                     <Link href="#about" className="hover:text-yellow-300 transition">
                     About
                     </Link>
-                    <Link href="/services" className="hover:text-yellow-300 transition">
-                    Service
+                    <Link href="#skills" className="hover:text-yellow-300 transition">
+                    Skills
                     </Link>
-                    <Link href="/contact" className="hover:text-yellow-300 transition">
-                    Contact
+                    <Link href="#project" className="hover:text-yellow-300 transition">
+                    Project
                     </Link>
                 </nav>
 
