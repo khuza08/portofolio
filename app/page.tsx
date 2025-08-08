@@ -382,6 +382,10 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section>
+        <div className="min-h-screen"></div>
+      </section>
+
     </div>
   );
 }
