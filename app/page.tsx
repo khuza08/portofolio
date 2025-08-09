@@ -387,18 +387,105 @@ export default function HomePage() {
       {/** project */}
       <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold mb-8 text-center font-mono">My Projects</h2>
+          <h2 className="text-3xl font-bold text-center font-mono">My Projects</h2>
+                    <p className="text-center text-white/65 font-mono italic">stuff that i cooked when im bored</p>
+
 
           <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
-            Projects that i create with ❤
+            Projects that I create with ❤
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {/* project card 1 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="/images/project1.png"
+                alt="Project 1"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2 font-mono">Project One</h3>
+                <p className="text-sm text-white/70 mb-4">
+                  Short description about what this project does and why it's cool.
+                </p>
+                <div className="flex gap-2">
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    Demo
+                  </a>
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
 
+            {/* project card 2 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="/images/project2.png"
+                alt="Project 2"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2 font-mono">Project Two</h3>
+                <p className="text-sm text-white/70 mb-4">
+                  Short description about this second project and its purpose.
+                </p>
+                <div className="flex gap-2">
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    Demo
+                  </a>
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* project card 3 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="/images/project3.png"
+                alt="Project 3"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2 font-mono">Project Three</h3>
+                <p className="text-sm text-white/70 mb-4">
+                  Short description for the third project in your portfolio.
+                </p>
+                <div className="flex gap-2">
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    Demo
+                  </a>
+                  <a
+                    href="#"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </section>
+
 
     </div>
   );
