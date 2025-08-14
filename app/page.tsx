@@ -139,7 +139,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">HTML</h3>
               <p className="text-white/65 text-sm font-mono">
-                Solid understanding of semantic HTML and structuring web content.
+                buat scaffolding website, ntar di styling pake TailwindCSS.
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">CSS</h3>
               <p className="text-white/65 text-sm font-mono">
-                Responsive design using modern CSS techniques and layouts.
+                buat desain UI/UX dulu, tapi sekarang pake Tailwind, lebih efisien.
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Tailwind</h3>
               <p className="text-white/65 text-sm font-mono">
-                Responsive design using TailwindCSS.
+                buat UI/UX rapi ama bagus, lebih simpel daripada normal CSS.
               </p>
             </div>
 
@@ -178,7 +178,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">TypeScript</h3>
               <p className="text-white/65 text-sm font-mono">
-                Experienced in building dynamic interfaces and interactivity.
+                sama kaya JavaScript, 1112 masih belajar dikit", adaptasi.
               </p>
             </div>
 
@@ -192,7 +192,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">JavaScript</h3>
               <p className="text-white/65 text-sm font-mono">
-                Experienced in building dynamic interfaces and interactivity.
+                cuma buat JavaScript basic doang, kaya fitur trigger
               </p>
             </div>
 
@@ -205,7 +205,7 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">React</h3>
               <p className="text-white/65 text-sm font-mono">
-                Experienced in building dynamic interfaces and interactivity.
+                buat bikin website sekolah, portofolio, framework banyak library.
               </p>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">VS / VS Code</h3>
               <p className="text-white/65 text-sm font-mono">
-                Powerful code editors with rich features for efficient coding, debugging, and extensibility.
+                kode editor semua orang, vscode ramah spek, visual studio haus prosesor.
               </p>
             </div>
 
@@ -252,7 +252,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Wireshark & Nmap</h3>
               <p className="text-white/65 text-sm font-mono">
-                Essential network tools for traffic analysis, network scanning, and security auditing.
+                buat cari flag CTF di level yang harus scan-analysis paket TCP/UDP.
               </p>
             </div>
 
@@ -265,16 +265,16 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Mikrotik</h3>
               <p className="text-white/65 text-sm font-mono">
-                Expert in configuring and managing Mikrotik routers for robust network infrastructure.
+                buat main main jaringan, disekolah kadang wkkwk, kadang buat testing picoCTF.
               </p>
             </div>
 
-            {/* terminals (windogs terminal & kitty) */}
+            {/* alacritty & kitty) */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col items-center text-center shadow-md">
               <div className="flex space-x-4 mb-4">
                 <img
-                  src="https://img.icons8.com/?size=100&id=gagNo02GtaUp&format=png&color=000000"
-                  alt="Windows Terminal Icon"
+                  src="https://raw.githubusercontent.com/alacritty/alacritty/master/extra/logo/compat/alacritty-term%2Bscanlines.png"
+                  alt="alacritty Icon"
                   className="w-20 h-20"
                 />
                 <img
@@ -285,7 +285,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Terminals</h3>
               <p className="text-white/65 text-sm font-mono">
-                Comfortable working with modern terminal emulators for efficient command-line workflows.
+                ngapa" in pakai terminal, enak, efisien, ga ribet kalo mau install package, jadi lebih simpel.
               </p>
             </div>
 
@@ -305,7 +305,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Git / Github</h3>
               <p className="text-white/65 text-sm font-mono">
-                Version control tools for collaboration, code management, and continuous integration.
+                buat version control, naruh projek, kode, kadang buat cloud gratisan, wkwkwk.
               </p>
             </div>
 
@@ -325,7 +325,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Android Studio / Netbeans</h3>
               <p className="text-white/65 text-sm font-mono">
-                Versatile IDEs for mobile and Java development, debugging and tooling support, i rarely use Netbeans.
+                IDE Versatile / cross-platform development, minusnya berat, kalo Netbeans jarang pakai, soalnya kuno.
               </p>
             </div>
           </div>
@@ -346,23 +346,32 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Windows 10</h3>
               <p className="text-white/65 text-sm font-mono">
-                i prefer Windows 10(GOOD AF), windogs 11 is trash, perform like shit, buggy ui, non-productive use only.
+                buat kalo mepet banget, di pc aja sih, Windows 10 ini versi paling stabil aja menurutku, ga kaya windog 11
+                ui berat, buggy, cpu intensive.
               </p>
             </div>
 
             {/* linux */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col items-center text-center shadow-md">
-              <img
-                src="https://img.icons8.com/?size=100&id=wAP66KkT7fgn&format=png&color=000000"
-                alt="ArchLNX Icon"
-                className="w-20 h-20 mb-4"
-              />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Arch Linux</h3>
+              <div className="flex space-x-4 mb-4">
+                <img
+                  src="https://img.icons8.com/?size=100&id=uIXgLv5iSlLJ&format=png&color=000000"
+                  alt="Archlnx Icon"
+                  className="w-20 h-20"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/CachyOS/CachyOS-icons/refs/heads/master/Colored/CachyOS.svg"
+                  alt="Cachy Icon"
+                  className="w-20 h-20"
+                />
+              </div>
+              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Archlinux / CachyOS</h3>
               <p className="text-white/65 text-sm font-mono">
-                Flexweight, custom-ance, user control, rolling release model favored by advanced users.
+                aku suka Arch/Cachy linux karena enteng, ga kaya windog, open-source
+                kustomisasi sesuka hati, cocok buwat tukang otak=atik, seperti aku.
               </p>
-
             </div>
+
 
             {/* kali */}
             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col items-center text-center shadow-md">
@@ -373,7 +382,8 @@ export default function HomePage() {
               />
               <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Kali Linux</h3>
               <p className="text-white/65 text-sm font-mono">
-                Debian-based distro for penetration testing, ethical hacking, network analysis, and security auditing.
+                Distro linux berbasis Debian yang ku pake pas LKS atau buat fun belajar aja, ya picoCTF, HTB, OVTW,
+                ya kadang di Arch, tapi ada tools yang kurang.
               </p>
             </div>
 
@@ -388,7 +398,7 @@ export default function HomePage() {
       <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
         <div className="max-w-6xl w-full">
           <h2 className="text-3xl font-bold text-center font-mono">My Projects</h2>
-                    <p className="text-center text-white/65 font-mono italic">stuff that i cooked when im bored</p>
+          <p className="text-center text-white/65 font-mono italic">stuff that i cooked when im bored</p>
 
 
           <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
