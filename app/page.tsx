@@ -407,12 +407,14 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* project card 1 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex flex-col">
-              <img
-                src="https://github.com/khuza08/webrpl1/blob/dev-huza/src/lib/assets/img/Screenshot%202025-08-14%20203523.png?raw=true"
-                alt="Project 1"
-                className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
-              />
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+              <div className="overflow-hidden">
+                <img
+                  src="https://github.com/khuza08/webrpl1/blob/dev-huza/src/lib/assets/img/Screenshot%202025-08-14%20203523.png?raw=true"
+                  alt="Project 1"
+                  className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
+                />
+              </div>
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold mb-2 font-mono">XII RPL-1 (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
@@ -437,12 +439,14 @@ export default function HomePage() {
             </div>
 
             {/* project card 2 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex flex-col">
-              <img
-                src="https://github.com/khuza08/web_antrek2/blob/main/src/assets/images/image.png?raw=true"
-                alt="Project 2"
-                className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
-              />
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.01] transition-transform duration-300 flex flex-col">
+              <div className="overflow-hidden">
+                <img
+                  src="https://github.com/khuza08/web_antrek2/blob/main/src/assets/images/image.png?raw=true"
+                  alt="Project 2"
+                  className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
+                />
+              </div>
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold mb-2 font-mono">
                   SMKANTARTIKA2SDA (WIP)
@@ -469,12 +473,14 @@ export default function HomePage() {
             </div>
 
             {/* project card 3 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.02] transition-transform duration-300 flex flex-col">
-              <img
-                src="https://raw.githubusercontent.com/Adityanrhm/kas-management/dev/overview/login.png"
-                alt="Project 3"
-                className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
-              />
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.01] transition-transform duration-300 flex flex-col">
+              <div className="overflow-hidden">
+                <img
+                  src="https://raw.githubusercontent.com/Adityanrhm/kas-management/dev/overview/login.png"
+                  alt="Project 3"
+                  className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
+                />
+              </div>
               <div className="p-4 flex flex-col flex-1">
                 <h3 className="text-xl font-semibold mb-2 font-mono">Kas Management (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
