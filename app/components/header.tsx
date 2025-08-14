@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function Header() {
-    const [activeSection, setActiveSection] = useState("");
+    const [activeSection, setActiveSection] = useState("landing");
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
@@ -30,22 +30,23 @@ export default function Header() {
     return (
         <header className="fixed top-0 left-0 right-0 border-b z-50 border-white/25 backdrop-blur-xl text-white py-4 px-6">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/" className="text-2xl font-bold uppercase tracking-wide hover:text-yellow-300 transition">KHZX</Link>
+                <Link href="/" className={`text-4xl font-bold hover:text-yellow-300 leading-tighter transition ${activeSection === "landing" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""
+                        }`}>KHZX</Link>
 
                 <nav className="space-x-8 hidden md:flex">
-                    <Link href="#about" className={`hover:text-yellow-300 transition ${activeSection === "about" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.9)]" : ""
+                    <Link href="#about" className={`hover:text-yellow-300 transition ${activeSection === "about" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""
                         }`}>
                         About
                     </Link>
-                    <Link href="#education" className={`hover:text-yellow-300 transition ${activeSection === "education" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.9)]" : ""
+                    <Link href="#education" className={`hover:text-yellow-300 transition ${activeSection === "education" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""
                         }`}>
                         Education
                     </Link>
-                    <Link href="#skills" className={`hover:text-yellow-300 transition ${activeSection === "skills" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.9)]" : ""
+                    <Link href="#skills" className={`hover:text-yellow-300 transition ${activeSection === "skills" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""
                         }`}>
                         Skills
                     </Link>
-                    <Link href="#project" className={`hover:text-yellow-300 transition ${activeSection === "project" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.9)]" : ""
+                    <Link href="#project" className={`hover:text-yellow-300 transition ${activeSection === "project" ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""
                         }`}>
                         Project
                     </Link>
