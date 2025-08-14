@@ -407,26 +407,27 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* project card 1 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 flex flex-col">
               <img
-                src="/images/project1.png"
+                src="https://github.com/khuza08/webrpl1/blob/dev-huza/src/lib/assets/img/Screenshot%202025-08-14%20203523.png?raw=true"
                 alt="Project 1"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 font-mono">Project One</h3>
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="text-xl font-semibold mb-2 font-mono">XII RPL-1 (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
-                  Short description about what this project does and why it's cool.
+                  Website resmi kelas XII RPL-1 generasi ke-8, menampilkan profil, kegiatan,
+                  dan dokumentasi kelas dengan desain modern.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mt-2">
                   <a
                     href="#"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-orange-500/20 border border-orange-700/20 rounded-full hover:bg-orange-500/30 hover:border-orange-700/40 transition"
                   >
-                    Demo
+                    Svelte
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Adityanrhm/kas-management"
                     className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
@@ -436,23 +437,26 @@ export default function HomePage() {
             </div>
 
             {/* project card 2 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 flex flex-col">
               <img
-                src="/images/project2.png"
+                src="https://github.com/khuza08/web_antrek2/blob/main/src/assets/images/image.png?raw=true"
                 alt="Project 2"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 font-mono">Project Two</h3>
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="text-xl font-semibold mb-2 font-mono">
+                  SMKANTARTIKA2SDA (WIP)
+                </h3>
                 <p className="text-sm text-white/70 mb-4">
-                  Short description about this second project and its purpose.
+                  Website sekolah yang dikembangkan untuk JHIC 2025 (Jagoan Hosting Infra Competition),
+                  menampilkan informasi sekolah, berita, dan galeri.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mt-2">
                   <a
                     href="#"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-yellow-500/20 border border-yellow-700/20 rounded-full hover:bg-yellow-500/30 hover:border-yellow-700/40 transition"
                   >
-                    Demo
+                    JavaScript
                   </a>
                   <a
                     href="#"
@@ -465,23 +469,24 @@ export default function HomePage() {
             </div>
 
             {/* project card 3 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 flex flex-col">
               <img
                 src="https://raw.githubusercontent.com/Adityanrhm/kas-management/dev/overview/login.png"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 font-mono">Kas Management</h3>
+              <div className="p-4 flex flex-col flex-1">
+                <h3 className="text-xl font-semibold mb-2 font-mono">Kas Management (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
-                  Aplikasi management kas yang membantu pengguna mengelola keuangan kelas dengan mudah. Fitur meliputi pencatatan transaksi, pengelolaan anggaran, dan laporan keuangan.
+                  Aplikasi manajemen kas kelas untuk mencatat transaksi, mengatur anggaran,
+                  dan menghasilkan laporan keuangan secara otomatis.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mt-2">
                   <a
                     href="#"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-red-500/20 border border-red-700/20 rounded-full hover:bg-red-500/30 hover:border-red-700/40 transition"
                   >
-                    Demo
+                    Laravel
                   </a>
                   <a
                     href="https://github.com/Adityanrhm/kas-management"
@@ -492,6 +497,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
