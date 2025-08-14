@@ -457,14 +457,14 @@ export default function HomePage() {
             {/* project card 3 */}
             <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300">
               <img
-                src="/images/project3.png"
+                src="https://raw.githubusercontent.com/Adityanrhm/kas-management/dev/overview/login.png"
                 alt="Project 3"
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2 font-mono">Project Three</h3>
+                <h3 className="text-xl font-semibold mb-2 font-mono">Kas Management</h3>
                 <p className="text-sm text-white/70 mb-4">
-                  Short description for the third project in your portfolio.
+                  Aplikasi management kas yang membantu pengguna mengelola keuangan kelas dengan mudah. Fitur meliputi pencatatan transaksi, pengelolaan anggaran, dan laporan keuangan.
                 </p>
                 <div className="flex gap-2">
                   <a
@@ -474,7 +474,7 @@ export default function HomePage() {
                     Demo
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Adityanrhm/kas-management"
                     className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
