@@ -375,7 +375,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* project card 1 */}
-            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
 
               <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 opacity-100 blur-3xl pointer-events-none" />
 
@@ -411,9 +411,9 @@ export default function HomePage() {
 
 
             {/* project card 2 */}
-            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
 
-              <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-red-400 opacity-100 blur-3xl pointer-events-none" />
+              <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 opacity-100 blur-3xl pointer-events-none" />
 
               <div className="overflow-hidden">
                 <img
@@ -431,7 +431,7 @@ export default function HomePage() {
                 <div className="flex gap-2 mt-2">
                   <a
                     href="#"
-                    className="px-3 py-1 text-sm bg-blue-500/20 border border-blue-700/20 rounded-full hover:bg-blue-500/30 hover:border-blue-700/40 transition"
+                    className="px-3 py-1 text-sm bg-yellow-500/20 border border-yellow-700/20 rounded-full hover:bg-yellow-500/30 hover:border-yellow-700/40 transition"
                   >
                     React
                   </a>
@@ -446,7 +446,7 @@ export default function HomePage() {
             </div>
 
             {/* project card 3 */}
-            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
 
               <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-red-400 opacity-100 blur-3xl pointer-events-none" />
 
