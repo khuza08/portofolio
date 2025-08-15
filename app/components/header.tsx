@@ -5,64 +5,65 @@ import Link from "next/link";
 
 export default function Header() {
     const [activeSection, setActiveSection] = useState("landing");
-    const [showHeader, setShowHeader] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isFloating, setIsFloating] = useState(false);
 
     useEffect(() => {
         const sections = document.querySelectorAll("section");
 
         const handleScroll = () => {
-            // --- logic sesi aktif---
             let current = "";
             sections.forEach((section) => {
                 const sectionTop = section.offsetTop - 100;
-                if (window.pageYOffset >= sectionTop) {
+                if (window.scrollY >= sectionTop) {
                     const id = section.getAttribute("id");
                     if (id) current = id;
                 }
             });
             setActiveSection(current);
 
-            // --- logic hide/show header  ---
-            if (window.scrollY > lastScrollY && window.scrollY > 80) {
-                // bawah
-                setShowHeader(false);
+            // aktifkan pill kalau scroll > 100vh dan bukan di landing
+            if (window.scrollY > window.innerHeight && current !== "landing") {
+                setIsFloating(true);
             } else {
-                // atas
-                setShowHeader(true);
+                setIsFloating(false);
             }
-            setLastScrollY(window.scrollY);
         };
 
         window.addEventListener("scroll", handleScroll);
+        handleScroll(); // cek pertama kali
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [lastScrollY]);
+    }, []);
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 border-b z-50 border-white/25 backdrop-blur-xl text-white py-4 px-6 transition-transform duration-300 ${showHeader ? "translate-y-0" : "-translate-y-full"
-                }`}
+            className={`fixed z-50 left-1/2 -translate-x-1/2
+            transition-[padding,background,border-radius,top,width,border-color] duration-300 ease-[cubic-bezier(0.1,0,0.2,1)]
+            ${isFloating
+                ? "top-6 w-auto px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg"
+                : "top-0 w-full px-6 py-4 border-b border-white/25 backdrop-blur-xl rounded-none border-transparent"
+            }`}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <Link
                     href="/"
-                    className={`text-4xl font-bold hover:text-yellow-300 leading-tighter transition ${activeSection === "landing"
-                            ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
-                            : ""
-                        }`}
+                    className={`text-2xl font-bold hover:text-yellow-300 transition
+                        ${activeSection === "landing"
+                            ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
+                            : ""}
+                        ${isFloating ? "mr-10" : ""}
+                    `}
                 >
                     KHZX
                 </Link>
 
-                <nav className="space-x-8 hidden md:flex">
+                <nav className="space-x-6 hidden md:flex">
                     {["about", "education", "skills", "project"].map((id) => (
                         <Link
                             key={id}
                             href={`#${id}`}
                             className={`hover:text-yellow-300 transition ${activeSection === id
-                                    ? "text-purple-600 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
-                                    : ""
-                                }`}
+                                ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
+                                : ""}`}
                         >
                             {id.charAt(0).toUpperCase() + id.slice(1)}
                         </Link>
@@ -72,7 +73,10 @@ export default function Header() {
                 <div>
                     <Link
                         href="/login"
-                        className="px-4 py-2 border border-white/25 rounded-lg hover:bg-white/10 hover:border-white/30 transition"
+                        className={`px-4 py-2 border border-white/25 transition
+                            hover:bg-white/10 hover:border-white/30
+                            ${isFloating ? "rounded-full ml-10" : "rounded-lg"}
+                        `}
                     >
                         Resume
                     </Link>
