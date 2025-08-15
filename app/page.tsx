@@ -38,39 +38,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* about */}
-      <section id="about" className="min-h-screen  text-white flex items-center justify-center px-8 py-24">
-        <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold mb-8 text-center font-mono">About Me</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
-              <div className="absolute top-[-10] left-0 w-24 h-24 bg-red-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
-              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Past</h3>
-              <p className="text-white/65 font-mono text-sm relative z-10">
-                Started as a curious learner, exploring different technologies and understanding how things work behind the screen.
-              </p>
-            </div>
-
-            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
-              <div className="absolute top-[-10] left-0 w-24 h-24 bg-yellow-400 rounded-full blur-2xl opacity-40 pointer-events-none" />
-              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Present</h3>
-              <p className="text-white/65 font-mono text-sm relative z-10">
-                Currently building projects, improving skills in frontend and backend, and trying to create meaningful experiences.
-              </p>
-            </div>
-
-            <div className="relative bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md overflow-hidden">
-              <div className="absolute top-[-10] left-0 w-24 h-24 bg-green-500 rounded-full blur-2xl opacity-40 pointer-events-none" />
-              <h3 className="text-xl text-white/90 font-semibold mb-2 font-mono relative z-10">Future</h3>
-              <p className="text-white/65 font-mono text-sm relative z-10">
-                Aiming to become a professional developer, contribute to open-source, and design tools that empower others.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
 
       <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
 
@@ -407,7 +375,10 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {/* project card 1 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+
+              <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-400 opacity-100 blur-3xl pointer-events-none" />
+
               <div className="overflow-hidden">
                 <img
                   src="https://github.com/khuza08/webrpl1/blob/dev-huza/src/lib/assets/img/Screenshot%202025-08-14%20203523.png?raw=true"
@@ -438,8 +409,12 @@ export default function HomePage() {
               </div>
             </div>
 
+
             {/* project card 2 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.01] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+
+              <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 via-blue-500 to-red-400 opacity-100 blur-3xl pointer-events-none" />
+
               <div className="overflow-hidden">
                 <img
                   src="https://github.com/khuza08/web_antrek2/blob/main/src/assets/images/image.png?raw=true"
@@ -448,9 +423,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold mb-2 font-mono">
-                  SMKANTARTIKA2SDA (WIP)
-                </h3>
+                <h3 className="text-xl font-semibold mb-2 font-mono">SMKANTARTIKA2SDA (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
                   Website sekolah yang dikembangkan untuk JHIC 2025 (Jagoan Hosting Infra Competition),
                   menampilkan informasi sekolah, berita, dan galeri.
@@ -458,12 +431,12 @@ export default function HomePage() {
                 <div className="flex gap-2 mt-2">
                   <a
                     href="#"
-                    className="px-3 py-1 text-sm bg-yellow-500/20 border border-yellow-700/20 rounded-full hover:bg-yellow-500/30 hover:border-yellow-700/40 transition"
+                    className="px-3 py-1 text-sm bg-blue-500/20 border border-blue-700/20 rounded-full hover:bg-blue-500/30 hover:border-blue-700/40 transition"
                   >
-                    JavaScript
+                    React
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Adityanrhm/kas-management"
                     className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
@@ -473,7 +446,10 @@ export default function HomePage() {
             </div>
 
             {/* project card 3 */}
-            <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.01] transition-transform duration-300 flex flex-col">
+            <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:scale-[1.011] transition-transform duration-300 flex flex-col">
+
+              <div className="absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-red-400 opacity-100 blur-3xl pointer-events-none" />
+
               <div className="overflow-hidden">
                 <img
                   src="https://raw.githubusercontent.com/Adityanrhm/kas-management/dev/overview/login.png"
