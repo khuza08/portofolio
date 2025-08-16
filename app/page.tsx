@@ -33,9 +33,10 @@ export default function HomePage() {
       >
         <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12 relative z-10">
           <div className="flex-1 text-left">
-            <h1 className="text-4xl mb-4  text-white">
-              Welcome to my <span className="italic">portofolio</span>
-            </h1>
+ <h1 className="text-4xl mb-4 font-extrabold bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+  Welcome to my <span className="italic font-light">portofolio</span>
+</h1>
+
             <p className="text-xl text-white max-w-xl  mb-4">
               Hello I'm <span className=" font-semibold">huza</span>. Here, you can learn more about me, i try my best to create things with{' '}
               <span role="img" aria-label="heart">❤</span>
@@ -54,7 +55,7 @@ export default function HomePage() {
       {/* roadmap */}
       <section id="education" className="relative min-h-screen  text-white px-8 py-24">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-24 text-center ">Education</h2>
+          <h2 className="text-3xl font-bold mb-24 text-center bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Education</h2>
 
           {/* roadmap line */}
           <div className="absolute left-1/2 top-64 bottom-0 w-1 bg-white/30 -translate-x-1/2 z-0" />
@@ -99,7 +100,7 @@ export default function HomePage() {
       {/* skills */}
       <section id="skills" className="min-h-screen  text-white flex items-center justify-center px-8 py-24">
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold text-center ">Skills</h2>
+          <h2 className="text-3xl font-bold text-center bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">Skills</h2>
           <p className="text-center text-white/65  italic">technical proficiencies</p>
 
           <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 ">
@@ -374,7 +375,7 @@ export default function HomePage() {
       {/** project */}
       <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold text-center ">My Projects</h2>
+          <h2 className="text-3xl font-bold text-center bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">My Projects</h2>
           <p className="text-center text-white/65  italic">stuff that i cooked when im bored</p>
 
 
