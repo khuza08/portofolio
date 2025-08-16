@@ -107,18 +107,7 @@ export default function Header() {
           </div>
 
           {/* mobile menu area */}
-          <div className="lg:hidden flex items-center space-x-2 flex-shrink-0">
-            {/* mobile resume btn - tampil ketika tidak floating atau di desktop kecil */}
-            {(!isFloating || window.innerWidth < 640) && (
-              <Link
-                href="/login"
-                className="px-2 sm:px-3 py-1.5 border border-white/25 transition text-xs sm:text-sm whitespace-nowrap
-                  hover:bg-white/10 hover:border-white/30 rounded-lg"
-              >
-                Resume
-              </Link>
-            )}
-
+          <div className="lg:hidden flex items-center flex-shrink-0">
             <button
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
