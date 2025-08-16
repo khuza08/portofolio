@@ -33,14 +33,14 @@ export default function HomePage() {
       >
         <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12 relative z-10">
           <div className="flex-1 text-left">
-            <h1 className="text-4xl mb-4 font-mono font-light text-white">
+            <h1 className="text-4xl mb-4  text-white">
               Welcome to my <span className="italic">portofolio</span>
             </h1>
-            <p className="text-xl text-white max-w-xl font-mono mb-4">
-              Hello I'm <span className="font-mono font-semibold">huza</span>. Here, you can learn more about me, i try my best to create things with{' '}
+            <p className="text-xl text-white max-w-xl  mb-4">
+              Hello I'm <span className=" font-semibold">huza</span>. Here, you can learn more about me, i try my best to create things with{' '}
               <span role="img" aria-label="heart">❤</span>
             </p>
-            <p className="text-lg text-white/50 italic font-mono">
+            <p className="text-lg text-white/50 italic ">
               "eyes are all the same, but they see differently."
             </p>
           </div>
@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* roadmap */}
       <section id="education" className="relative min-h-screen  text-white px-8 py-24">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold mb-24 text-center font-mono">Education</h2>
+          <h2 className="text-3xl font-bold mb-24 text-center ">Education</h2>
 
           {/* roadmap line */}
           <div className="absolute left-1/2 top-64 bottom-0 w-1 bg-white/30 -translate-x-1/2 z-0" />
@@ -63,8 +63,8 @@ export default function HomePage() {
             {/* item 1 - left */}
             <div className="flex items-center justify-between relative">
               <div className="w-1/2 text-right pr-8">
-                <h3 className="text-xl font-semibold font-mono">Junior High School</h3>
-                <p className="text-white/65 font-mono text-sm">Nurul Khoir Islamic Boarding School<br />2020 - 2023</p>
+                <h3 className="text-xl font-semibold ">Junior High School</h3>
+                <p className="text-white/65  text-sm">Nurul Khoir Islamic Boarding School<br />2020 - 2023</p>
               </div>
               <div className="w-5 h-5 bg-white rounded-full z-20" />
               <div className="w-1/2" />
@@ -75,16 +75,16 @@ export default function HomePage() {
               <div className="w-1/2" />
               <div className="w-5 h-5 bg-white rounded-full z-20" />
               <div className="w-1/2 pl-8 text-left">
-                <h3 className="text-xl font-semibold font-mono">Secondary High School</h3>
-                <p className="text-white/65 font-mono text-sm">Antartika 2 Vocational High School<br />2023 - Present</p>
+                <h3 className="text-xl font-semibold ">Secondary High School</h3>
+                <p className="text-white/65  text-sm">Antartika 2 Vocational High School<br />2023 - Present</p>
               </div>
             </div>
 
             {/* item 3 - left */}
             <div className="flex items-center justify-between relative">
               <div className="w-1/2 text-right pr-8">
-                <h3 className="text-xl font-semibold font-mono">Future</h3>
-                <p className="text-white/65 font-mono text-sm">??? - ???<br />202X - XXXX</p>
+                <h3 className="text-xl font-semibold ">Future</h3>
+                <p className="text-white/65  text-sm">??? - ???<br />202X - XXXX</p>
               </div>
               <div className="w-5 h-5 bg-white rounded-full z-20" />
               <div className="w-1/2" />
@@ -99,10 +99,10 @@ export default function HomePage() {
       {/* skills */}
       <section id="skills" className="min-h-screen  text-white flex items-center justify-center px-8 py-24">
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold text-center font-mono">Skills</h2>
-          <p className="text-center text-white/65 font-mono italic">technical proficiencies</p>
+          <h2 className="text-3xl font-bold text-center ">Skills</h2>
+          <p className="text-center text-white/65  italic">technical proficiencies</p>
 
-          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
+          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 ">
             Languages that I use for UI/UX Design.
           </div>
 
@@ -114,8 +114,8 @@ export default function HomePage() {
                 alt="HTML5 Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">HTML</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">HTML</h3>
+              <p className="text-white/65 text-sm ">
                 buat scaffolding website, ntar di styling pake TailwindCSS.
               </p>
             </div>
@@ -127,8 +127,8 @@ export default function HomePage() {
                 alt="CSS3 Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">CSS</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">CSS</h3>
+              <p className="text-white/65 text-sm ">
                 buat desain UI/UX dulu, tapi sekarang pake Tailwind, lebih efisien.
               </p>
             </div>
@@ -140,8 +140,8 @@ export default function HomePage() {
                 alt="Tailwind Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Tailwind</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Tailwind</h3>
+              <p className="text-white/65 text-sm ">
                 buat UI/UX rapi ama bagus, lebih simpel daripada normal CSS.
               </p>
             </div>
@@ -153,8 +153,8 @@ export default function HomePage() {
                 alt="Typescript Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">TypeScript</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">TypeScript</h3>
+              <p className="text-white/65 text-sm ">
                 sama kaya JavaScript, 1112 masih belajar dikit", adaptasi.
               </p>
             </div>
@@ -167,8 +167,8 @@ export default function HomePage() {
                 alt="JavaScript Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">JavaScript</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">JavaScript</h3>
+              <p className="text-white/65 text-sm ">
                 cuma buat JavaScript basic doang, kaya fitur trigger
               </p>
             </div>
@@ -180,14 +180,14 @@ export default function HomePage() {
                 alt="React Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">React</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">React</h3>
+              <p className="text-white/65 text-sm ">
                 buat bikin website sekolah, portofolio, framework banyak library.
               </p>
             </div>
           </div>
 
-          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
+          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 ">
             Tools that I use for Development & Networking
           </div>
 
@@ -207,8 +207,8 @@ export default function HomePage() {
                   className="w-20 h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">VS / VS Code</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">VS / VS Code</h3>
+              <p className="text-white/65 text-sm ">
                 kode editor semua orang, vscode ramah spek, visual studio haus prosesor.
               </p>
             </div>
@@ -227,8 +227,8 @@ export default function HomePage() {
                   className="w-fit h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Wireshark & Nmap</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Wireshark & Nmap</h3>
+              <p className="text-white/65 text-sm ">
                 buat cari flag CTF di level yang harus scan-analysis paket TCP/UDP.
               </p>
             </div>
@@ -240,8 +240,8 @@ export default function HomePage() {
                 alt="Mikrotik Icon"
                 className="w-fit h-20 mb-4 invert"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Mikrotik</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Mikrotik</h3>
+              <p className="text-white/65 text-sm ">
                 buat main main jaringan, disekolah kadang wkkwk, kadang buat testing picoCTF.
               </p>
             </div>
@@ -260,8 +260,8 @@ export default function HomePage() {
                   className="w-20 h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Terminals</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Terminals</h3>
+              <p className="text-white/65 text-sm ">
                 ngapa" in pakai terminal, enak, efisien, ga ribet kalo mau install package, jadi lebih simpel.
               </p>
             </div>
@@ -280,8 +280,8 @@ export default function HomePage() {
                   className="w-20 h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Git / Github</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Git / Github</h3>
+              <p className="text-white/65 text-sm ">
                 buat version control, naruh projek, kode, kadang buat cloud gratisan, wkwkwk.
               </p>
             </div>
@@ -300,15 +300,15 @@ export default function HomePage() {
                   className="w-20 h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Android Studio / Netbeans</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Android Studio / Netbeans</h3>
+              <p className="text-white/65 text-sm ">
                 IDE Versatile / cross-platform development, minusnya berat, kalo Netbeans jarang pakai, soalnya kuno.
               </p>
             </div>
           </div>
 
 
-          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
+          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 ">
             Operating System that I use for non/Productive
           </div>
 
@@ -321,8 +321,8 @@ export default function HomePage() {
                 alt="windows 10 Icon"
                 className="w-20 h-20 mb-4"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Windows 10</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Windows 10</h3>
+              <p className="text-white/65 text-sm ">
                 buat kalo mepet banget, di pc aja sih, Windows 10 ini versi paling stabil aja menurutku, ga kaya windog 11
                 ui berat, buggy, cpu intensive.
               </p>
@@ -342,8 +342,8 @@ export default function HomePage() {
                   className="w-20 h-20"
                 />
               </div>
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Archlinux / CachyOS</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Archlinux / CachyOS</h3>
+              <p className="text-white/65 text-sm ">
                 aku suka Arch/Cachy linux karena enteng, ga kaya windog, open-source
                 kustomisasi sesuka hati, cocok buwat tukang otak=atik, seperti aku.
               </p>
@@ -357,8 +357,8 @@ export default function HomePage() {
                 alt="Kali Icon"
                 className="w-20 h-20 mb-4 invert"
               />
-              <h3 className="text-xl font-semibold font-mono mb-2 text-white/90">Kali Linux</h3>
-              <p className="text-white/65 text-sm font-mono">
+              <h3 className="text-xl font-semibold  mb-2 text-white/90">Kali Linux</h3>
+              <p className="text-white/65 text-sm ">
                 Distro linux berbasis Debian yang ku pake pas LKS atau buat fun belajar aja, ya picoCTF, HTB, OVTW,
                 ya kadang di Arch, tapi ada tools yang kurang.
               </p>
@@ -374,11 +374,11 @@ export default function HomePage() {
       {/** project */}
       <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl font-bold text-center font-mono">My Projects</h2>
-          <p className="text-center text-white/65 font-mono italic">stuff that i cooked when im bored</p>
+          <h2 className="text-3xl font-bold text-center ">My Projects</h2>
+          <p className="text-center text-white/65  italic">stuff that i cooked when im bored</p>
 
 
-          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 font-mono">
+          <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80 ">
             Projects that I create with ❤
           </div>
 
@@ -396,7 +396,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold mb-2 font-mono">XII RPL-1 (WIP)</h3>
+                <h3 className="text-xl font-semibold mb-2 ">XII RPL-1 (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
                   Website resmi kelas XII RPL-1 generasi ke-8, menampilkan profil, kegiatan,
                   dan dokumentasi kelas dengan desain modern.
@@ -432,7 +432,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold mb-2 font-mono">SMKANTARTIKA2SDA (WIP)</h3>
+                <h3 className="text-xl font-semibold mb-2 ">SMKANTARTIKA2SDA (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
                   Website sekolah yang dikembangkan untuk JHIC 2025 (Jagoan Hosting Infra Competition),
                   menampilkan informasi sekolah, berita, dan galeri.
@@ -467,7 +467,7 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold mb-2 font-mono">Kas Management (WIP)</h3>
+                <h3 className="text-xl font-semibold mb-2 ">Kas Management (WIP)</h3>
                 <p className="text-sm text-white/70 mb-4">
                   Aplikasi manajemen kas kelas untuk mencatat transaksi, mengatur anggaran,
                   dan menghasilkan laporan keuangan secara otomatis.
