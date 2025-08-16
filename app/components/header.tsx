@@ -139,49 +139,33 @@ export default function Header() {
             </button>
           </div>
         </div>
+      </header>
 
-        {/* mobile dropdown menu */}
+       {/* dropdown outside header */}
+      <div className={`lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
-          className={`lg:hidden absolute left-1/2 -translate-x-1/2 top-full z-50 
-            w-[calc(100vw-2rem)] max-w-sm mt-2
-            rounded-2xl bg-gray-900/95 backdrop-blur-xl border border-white/20 shadow-2xl p-4 sm:p-6 
-            transform transition-all duration-300 origin-top ${
-              isMobileMenuOpen
-                ? 'opacity-100 pointer-events-auto scale-100'
-                : 'opacity-0 pointer-events-none scale-95'
-            }`}
-          style={{ transformOrigin: 'top center' }}
+          className={`absolute left-1/2 -translate-x-1/2 top-15 w-[calc(100%-2rem)] max-w-sm rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 shadow-2xl p-6 transform transition-all duration-300 origin-top
+            ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
         >
-          {/* nav links */}
-          <nav className="space-y-4 sm:space-y-6">
-            {["about", "education", "skills", "project"].map((id) => (
+          <nav className="space-y-4">
+            {["about","education","skills","project"].map(id => (
               <Link
                 key={id}
                 href={`#${id}`}
                 onClick={closeMobileMenu}
-                className={`block text-base sm:text-lg hover:text-yellow-300 transition transform hover:translate-x-2 ${
-                  activeSection === id
-                    ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
-                    : ""
-                }`}
+                className={`block text-base hover:text-yellow-300 transition`}
               >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {id.charAt(0).toUpperCase()+id.slice(1)}
               </Link>
             ))}
           </nav>
-
-          {/* mobile resume btn in dropdown */}
-          <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/20">
-            <Link
-              href="/login"
-              onClick={closeMobileMenu}
-              className="block w-full text-center px-4 py-2.5 sm:py-3 border border-white/25 rounded-lg transition hover:bg-white/10 hover:border-white/30 text-sm sm:text-base"
-            >
+          <div className="mt-6 pt-4 border-t border-white/20">
+            <Link href="/login" onClick={closeMobileMenu} className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm">
               Resume
             </Link>
           </div>
         </div>
-      </header>
+      </div>
     </>
   );
 }
