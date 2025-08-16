@@ -18,10 +18,22 @@ export default function HomePage() {
     <div className="w-full">
 
       {/* landing */}
-      <section id="landing" className="border-white/10 border-b gridvignette relative min-h-screen flex items-center justify-center p-8">
-        <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12">
+      <section
+        id="landing"
+        className="relative min-h-screen w-full flex items-center justify-center p-8"
+        style={{
+          backgroundImage: `
+      radial-gradient(circle, rgba(17,17,17,1), transparent 100%),
+      linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+    `,
+          backgroundSize: '100% 100%, 60px 60px, 60px 60px',
+          backgroundRepeat: 'no-repeat, repeat, repeat'
+        }}
+      >
+        <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12 relative z-10">
           <div className="flex-1 text-left">
-            <h1 className="text-4xl mb-4 font-mono font-light">
+            <h1 className="text-4xl mb-4 font-mono font-light text-white">
               Welcome to my <span className="italic">portofolio</span>
             </h1>
             <p className="text-xl text-white max-w-xl font-mono mb-4">
@@ -33,12 +45,10 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex-1 flex justify-center">
-            <StarIcon width={96} height={96} fill="#ffffffff" />
+            <StarIcon width={96} height={96} fill="#ffffff" />
           </div>
         </div>
       </section>
-
-
 
       <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
 

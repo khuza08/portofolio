@@ -29,26 +29,6 @@ body, html {
 }
 }
 
-.gridvignette {
-  height: 100vh;
-  width: auto;
-  
-  background-image: 
-    radial-gradient(circle, rgba(17, 17, 17, 1), transparent 100%), /* vignette circle on top */
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),  /* vertical grid lines */
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* horizontal grid lines */
-  
-  background-size: 
-    100% 100%,  /* radial gradient covers full element */
-    60px 60px,   /* grid spacing X */
-    60px 60px;   /* grid spacing Y */
-  
-  background-repeat:
-    no-repeat,
-    repeat,
-    repeat;
-}
-
 .roadmap-line {
   position: absolute;
   left: 50%;
