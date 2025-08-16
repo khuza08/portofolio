@@ -411,7 +411,7 @@ export default function HomePage() {
                   </a>
                   <a
                     href="https://github.com/Adityanrhm/kas-management"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
                   </a>
@@ -447,7 +447,7 @@ export default function HomePage() {
                   </a>
                   <a
                     href="https://github.com/Adityanrhm/kas-management"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
                   </a>
@@ -482,7 +482,7 @@ export default function HomePage() {
                   </a>
                   <a
                     href="https://github.com/Adityanrhm/kas-management"
-                    className="px-3 py-1 text-sm bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition"
+                    className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
                   >
                     GitHub
                   </a>
