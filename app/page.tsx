@@ -50,7 +50,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="w-[80vw] mx-auto border-t border-white/10 text-center" />
 
       {/* roadmap */}
       <section id="education" className="relative min-h-screen  text-white px-8 py-24">
