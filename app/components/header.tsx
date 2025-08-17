@@ -60,16 +60,16 @@ export default function Header() {
     <>
       <header
         className={`fixed z-50 left-1/2 -translate-x-1/2
-          transition-[padding,background,border-radius,top,width,border-color] duration-300 ease-[cubic-bezier(0.1,0,0.2,1)]
+          transition-all duration-300 ease-[cubic-bezier(0.1,0,0.2,1)]
           ${isFloating
-            ? "top-2 sm:top-4 md:top-6 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-auto max-w-none md:max-w-4xl px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg"
+            ? "top-2 sm:top-4 md:top-6 w-[calc(100%-1rem)] sm:w-[calc(100%-2rem)] md:w-fill max-w-none md:max-w-4xl px-3 sm:px-4 md:px-6 py-2 md:py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/10 shadow-lg"
             : "top-0 w-full max-w-none px-3 sm:px-4 md:px-6 py-3 md:py-4 border-b border-white/25 backdrop-blur-xl rounded-none"
           }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className={`text-lg sm:text-xl md:text-2xl font-bold hover:text-yellow-300 transition flex-shrink-0
+            className={`text-lg sm:text-xl md:text-2xl font-bold hover:text-yellow-300 transition flex-shrink-0 mr-10
               ${activeSection === "landing"
                 ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
                 : ""}
@@ -79,7 +79,7 @@ export default function Header() {
           </Link>
 
           {/* desktop nav */}
-          <nav className="hidden lg:flex space-x-4 xl:space-x-6 flex-shrink-0">
+          <nav className="hidden sm:hidden md:flex lg:flex space-x-4 xl:space-x-6 flex-shrink-0">
             {["about", "education", "skills", "project"].map((id) => (
               <Link
                 key={id}
@@ -94,10 +94,10 @@ export default function Header() {
           </nav>
 
           {/* desktop resume btn - hidden pada medium devices untuk menghindari overlap */}
-          <div className="hidden lg:block flex-shrink-0">
+          <div className="hidden sm:hidden md:block lg:block flex-shrink-0">
             <Link
               href="/login"
-              className={`px-3 xl:px-4 py-2 border border-white/25 transition text-sm xl:text-base whitespace-nowrap
+              className={`px-3 xl:px-4 py-2 border border-white/25 transition text-sm xl:text-base whitespace-nowrap ml-10
                 hover:bg-white/10 hover:border-white/30
                 ${isFloating ? "rounded-full" : "rounded-lg"}
               `}
@@ -107,7 +107,7 @@ export default function Header() {
           </div>
 
           {/* mobile menu area */}
-          <div className="lg:hidden flex items-center flex-shrink-0">
+          <div className="md:hidden lg:hidden flex items-center flex-shrink-0">
             <button
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
@@ -142,9 +142,9 @@ export default function Header() {
       </header>
 
        {/* dropdown outside header */}
-      <div className={`lg:hidden fixed inset-0 z-40 pointer-events-none`}>
+      <div className={`md:hidden lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
-          className={`absolute left-1/2 -translate-x-1/2 top-15 w-[calc(100%-2rem)] max-w-sm rounded-2xl bg-white/5 backdrop-blur-xl border border-white/20 shadow-2xl p-6 transform transition-all duration-300 origin-top
+          className={`absolute left-1/2 -translate-x-1/2 top-18 w-[calc(100%-2rem)] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-6 transform transition-all duration-300 origin-top
             ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
         >
           <nav className="space-y-4">
@@ -159,7 +159,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <div className="mt-6 pt-4 border-t border-white/20">
+          <div className="mt-6 pt-4 border-t border-white/10">
             <Link href="/login" onClick={closeMobileMenu} className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm">
               Resume
             </Link>
