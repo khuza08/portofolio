@@ -27,7 +27,19 @@ export default function ScrollButton() {
   return (
     <button
       onClick={handleClick}
-      className="fixed right-4 bottom-3 z-50 px-8 py-4 backdrop-blur-lg rounded-full border-4 border-white/10 bg-white/5 text-white shadow-lg hover:bg-white/10 transition transform ease-in-out"
+      className="
+        fixed right-4 bottom-3 z-50 
+        px-6 py-3 sm:px-4 sm:py-2 
+        backdrop-blur-lg rounded-full 
+        border-2 border-white/20 
+        bg-white/10 text-white 
+        shadow-lg 
+        hover:bg-white/20 
+        transition 
+        duration-300 
+        ease-in-out 
+        transform
+      "
       aria-label={atBottom ? "Scroll to top" : "Scroll to bottom"}
     >
       {atBottom ? "▲" : "▼"}
