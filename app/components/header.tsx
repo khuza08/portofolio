@@ -89,6 +89,14 @@ export default function Header() {
     }
   };
 
+  // Helper function, check is section active? yayaya
+  const isActiveMobileSection = (sectionId: string) => {
+    return activeSection === sectionId;
+  };
+
+  // nav items mobail
+  const navItems = ["about", "education", "skills", "project"];
+
   return (
     <>
       <header
@@ -114,7 +122,7 @@ export default function Header() {
 
           {/* desktop nav */}
           <nav className="hidden sm:hidden md:flex lg:flex space-x-4 xl:space-x-6 flex-shrink-0">
-            {["about", "education", "skills", "project"].map((id) => (
+            {navItems.map((id) => (
               <Link
                 key={id}
                 href={`#${id}`}
@@ -175,7 +183,7 @@ export default function Header() {
         </div>
       </header>
 
-       {/* dropdown outside header */}
+       {/* dropdown mobail */}
       <div className={`md:hidden lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
           className={`absolute left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-6 transform transition-all duration-300 origin-top
@@ -185,21 +193,44 @@ export default function Header() {
           }}
         >
           <nav className="space-y-4">
-            {["about","education","skills","project"].map(id => (
+            {navItems.map(id => (
               <Link
                 key={id}
                 href={`#${id}`}
                 onClick={closeMobileMenu}
-                className={`block text-base hover:text-yellow-300 transition`}
+                className={`block text-base transition relative py-1 px-3 rounded-lg
+                  ${isActiveMobileSection(id) 
+                    ? "text-purple-500 bg-purple-500/10 border border-purple-500/20 drop-shadow-[0_0_8px_rgba(191,191,255,0.3)]" 
+                    : "hover:text-yellow-300 hover:bg-white/5"
+                  }`}
               >
-                {id.charAt(0).toUpperCase()+id.slice(1)}
+                <div className="flex items-center justify-between">
+                  <span>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
+                  {isActiveMobileSection(id) && (
+                    <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
+                  )}
+                </div>
               </Link>
             ))}
           </nav>
+          
           <div className="mt-6 pt-4 border-t border-white/10">
-            <Link href="/login" onClick={closeMobileMenu} className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm">
+            <Link 
+              href="/login" 
+              onClick={closeMobileMenu} 
+              className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm transition-all duration-200"
+            >
               Resume
             </Link>
+          </div>
+
+          {/* not so cool, but ill add current indicator */}
+          <div className="mt-4 pt-4 border-t border-white/5">
+            <div className="text-xs text-white/50 text-center">
+              Current: <span className="text-purple-400 font-medium">
+                {activeSection === "landing" ? "Home" : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
+              </span>
+            </div>
           </div>
         </div>
       </div>
