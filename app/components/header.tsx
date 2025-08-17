@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("landing");
   const [isFloating, setIsFloating] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -35,6 +37,27 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Update header height ketika layout berubah
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        const rect = headerRef.current.getBoundingClientRect();
+        setHeaderHeight(rect.height);
+      }
+    };
+
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    
+    // Update height setelah transisi selesai
+    const timer = setTimeout(updateHeaderHeight, 300);
+    
+    return () => {
+      window.removeEventListener('resize', updateHeaderHeight);
+      clearTimeout(timer);
+    };
+  }, [isFloating]); // Re-run ketika floating state berubah
+
   // close mobile menu when clicking outside or on link
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -56,9 +79,20 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const getDropdownTopPosition = () => {
+    if (isFloating) {
+      // sm: 15px gap, md+: 25px gap
+      const gap = window.innerWidth >= 640 ? 25 : 15; // 640 = md breakpoint
+      return `${headerHeight + gap}px`;
+    } else {
+      return `${headerHeight + 10}px`;
+    }
+  };
+
   return (
     <>
       <header
+        ref={headerRef}
         className={`fixed z-50 left-1/2 -translate-x-1/2
           transition-all duration-300 ease-[cubic-bezier(0.1,0,0.2,1)]
           ${isFloating
@@ -144,8 +178,11 @@ export default function Header() {
        {/* dropdown outside header */}
       <div className={`md:hidden lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
-          className={`absolute left-1/2 -translate-x-1/2 top-18 w-[calc(100%-2rem)] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-6 transform transition-all duration-300 origin-top
+          className={`absolute left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-6 transform transition-all duration-300 origin-top
             ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
+          style={{ 
+            top: getDropdownTopPosition()
+          }}
         >
           <nav className="space-y-4">
             {["about","education","skills","project"].map(id => (
