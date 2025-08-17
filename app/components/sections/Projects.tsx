@@ -52,43 +52,45 @@ export function Projects() {
   };
 
   const ProjectCard = ({ project }) => {
-    const colorClasses = techColors[project.techColor] || techColors.orange; // fallback jika warna tidak ditemukan
+  const colorClasses = techColors[project.techColor] || techColors.orange;
 
-    return (
-      <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
-        <div className={`absolute bottom-[-16px] left-0 w-16 h-16 rounded-full bg-gradient-to-r ${project.gradientColor} opacity-100 blur-3xl pointer-events-none`} />
+  return (
+    <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full">
+      <div className={`absolute bottom-[-16px] left-0 w-16 h-16 rounded-full bg-gradient-to-r ${project.gradientColor} opacity-100 blur-3xl pointer-events-none`} />
 
-        <div className="overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
-          />
-        </div>
+      <div className="overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
+        />
+      </div>
 
-        <div className="p-4 flex flex-col flex-1">
-          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-          <p className="text-sm text-white/70 mb-4">{project.description}</p>
-          <div className="flex gap-2 mt-2">
-            <a
-              href="#"
-              className={`px-3 py-1 text-sm rounded-full transition border ${colorClasses.bgLight} ${colorClasses.borderLight} ${colorClasses.bgHover} ${colorClasses.borderHover}`}
-            >
-              {project.tech}
-            </a>
-            <a
-              href={project.github}
-              className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </div>
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+        <p className="text-sm text-white/70 mb-4">{project.description}</p>
+
+        <div className="mt-auto flex gap-2">
+          <a
+            href="#"
+            className={`px-3 py-1 text-sm rounded-full transition border ${colorClasses.bgLight} ${colorClasses.borderLight} ${colorClasses.bgHover} ${colorClasses.borderHover}`}
+          >
+            {project.tech}
+          </a>
+          <a
+            href={project.github}
+            className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
+
 
   return (
     <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
