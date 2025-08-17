@@ -29,38 +29,66 @@ export function Projects() {
     }
   ];
 
-  const ProjectCard = ({ project }) => (
-    <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
-      <div className={`absolute bottom-[-16] left-0 w-16 h-16 rounded-full bg-gradient-to-r ${project.gradientColor} opacity-100 blur-3xl pointer-events-none`} />
-      
-      <div className="overflow-hidden">
-        <img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
-        />
-      </div>
-      
-      <div className="p-4 flex flex-col flex-1">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm text-white/70 mb-4">{project.description}</p>
-        <div className="flex gap-2 mt-2">
-          <a
-            href="#"
-            className={`px-3 py-1 text-sm bg-${project.techColor}-500/20 border border-${project.techColor}-700/20 rounded-full hover:bg-${project.techColor}-500/30 hover:border-${project.techColor}-700/40 transition`}
-          >
-            {project.tech}
-          </a>
-          <a
-            href={project.github}
-            className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
-          >
-            GitHub
-          </a>
+  // map warna
+  const techColors = {
+    orange: {
+      bgLight: "bg-orange-500/20",
+      borderLight: "border-orange-700/20",
+      bgHover: "hover:bg-orange-500/30",
+      borderHover: "hover:border-orange-700/40",
+    },
+    yellow: {
+      bgLight: "bg-yellow-500/20",
+      borderLight: "border-yellow-700/20",
+      bgHover: "hover:bg-yellow-500/30",
+      borderHover: "hover:border-yellow-700/40",
+    },
+    red: {
+      bgLight: "bg-red-500/20",
+      borderLight: "border-red-700/20",
+      bgHover: "hover:bg-red-500/30",
+      borderHover: "hover:border-red-700/40",
+    },
+  };
+
+  const ProjectCard = ({ project }) => {
+    const colorClasses = techColors[project.techColor] || techColors.orange; // fallback jika warna tidak ditemukan
+
+    return (
+      <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden group hover:bg-white/10 hover:border-white/20 transition-all duration-300 flex flex-col">
+        <div className={`absolute bottom-[-16px] left-0 w-16 h-16 rounded-full bg-gradient-to-r ${project.gradientColor} opacity-100 blur-3xl pointer-events-none`} />
+
+        <div className="overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-48 object-cover transition-transform duration-500 delay-100 group-hover:scale-105"
+          />
+        </div>
+
+        <div className="p-4 flex flex-col flex-1">
+          <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+          <p className="text-sm text-white/70 mb-4">{project.description}</p>
+          <div className="flex gap-2 mt-2">
+            <a
+              href="#"
+              className={`px-3 py-1 text-sm rounded-full transition border ${colorClasses.bgLight} ${colorClasses.borderLight} ${colorClasses.bgHover} ${colorClasses.borderHover}`}
+            >
+              {project.tech}
+            </a>
+            <a
+              href={project.github}
+              className="px-3 py-1 text-sm bg-white/10 border border-white/10 rounded-full hover:bg-white/20 transition"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section id="project" className="min-h-screen text-white flex items-center justify-center px-8">
