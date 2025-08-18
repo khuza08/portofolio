@@ -16,7 +16,7 @@ export function Landing() {
       className="relative min-h-screen w-full flex items-center justify-center p-8"
       style={{
         backgroundImage: `
-          radial-gradient(circle, rgba(17,17,17,1), transparent 100%),
+          radial-gradient(circle, rgba(0,0,0,1), transparent 100%),
           linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
           linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
         `,
