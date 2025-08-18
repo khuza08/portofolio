@@ -14,8 +14,8 @@ export default function Footer() {
 
 
   return (
-    <footer className="relative bottom-0 left-0 w-full bg-black text-white">
-      <div className="w-full bg-black py-24 px-6">
+    <footer className="relative bottom-0 left-0 w-full text-white">
+      <div className="w-full py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div data-aos="fade-up">

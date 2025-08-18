@@ -95,7 +95,7 @@ export default function Header() {
   };
 
   // nav items mobail
-  const navItems = ["about", "education", "skills", "project"];
+  const navItems = ["education", "skills", "project"];
 
   return (
     <>
