@@ -1,3 +1,9 @@
+'use client';
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export function Skills() {
   const skillCategories = {
     languages: {
@@ -112,8 +118,15 @@ export function Skills() {
     }
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 700, once: true });
+  }, []);
+
   const SkillCard = ({ skill }) => (
-    <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col items-center text-center shadow-md">
+    <div
+      className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col items-center text-center shadow-md"
+      data-aos="fade-up"
+    >
       {skill.icons ? (
         <div className="flex space-x-4 mb-4">
           {skill.icons.map((icon, index) => (
@@ -121,7 +134,9 @@ export function Skills() {
               key={index}
               src={icon}
               alt={`${skill.name} Icon ${index + 1}`}
-              className={`w-20 h-20 ${skill.name === "Wireshark & Nmap" && index === 1 ? "w-fit" : ""}`}
+              className={`w-20 h-20 ${
+                skill.name === "Wireshark & Nmap" && index === 1 ? "w-fit" : ""
+              }`}
             />
           ))}
         </div>
@@ -129,7 +144,9 @@ export function Skills() {
         <img
           src={skill.icon}
           alt={`${skill.name} Icon`}
-          className={`w-20 h-20 mb-4 ${skill.invert ? "invert" : ""} ${skill.name === "Mikrotik" ? "w-fit" : ""}`}
+          className={`w-20 h-20 mb-4 ${skill.invert ? "invert" : ""} ${
+            skill.name === "Mikrotik" ? "w-fit" : ""
+          }`}
         />
       )}
       <h3 className="text-xl font-semibold mb-2 text-white/90">{skill.name}</h3>
@@ -139,7 +156,7 @@ export function Skills() {
 
   const CategorySection = ({ category }) => (
     <>
-      <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80">
+      <div className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80" data-aos="fade-up">
         {category.title}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -151,12 +168,20 @@ export function Skills() {
   );
 
   return (
-    <section id="skills" className="min-h-screen text-white flex items-center justify-center px-8 py-24">
+    <section
+      id="skills"
+      className="min-h-screen text-white flex items-center justify-center px-8 py-24"
+    >
       <div className="max-w-6xl w-full">
-        <h2 className="text-3xl font-bold text-center bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+        <h2
+          className="text-3xl font-bold text-center bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent"
+          data-aos="fade-up"
+        >
           Skills
         </h2>
-        <p className="text-center text-white/65 italic">technical proficiencies</p>
+        <p className="text-center text-white/65 italic" data-aos="fade-up" data-aos-delay="100">
+          technical proficiencies
+        </p>
 
         <CategorySection category={skillCategories.languages} />
         <CategorySection category={skillCategories.tools} />
