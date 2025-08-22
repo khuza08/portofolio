@@ -49,7 +49,7 @@ export default function Footer() {
                 href="/"
                 className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20"
               >
-                <span className="tracking-wide">CONTACT</span>
+                <span className="tracking-wide">SUPPORT</span>
                 <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
