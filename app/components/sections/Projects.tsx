@@ -133,7 +133,7 @@ export function Projects() {
           className="bg-white/5 py-2 px-4 m-4 mx-auto w-fit border border-white/10 rounded-full flex items-center justify-center text-center text-white/80"
           data-aos="fade-up"
         >
-          Projects that I create with ❤
+          Websites
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
