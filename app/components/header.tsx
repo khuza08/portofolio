@@ -11,33 +11,77 @@ export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section");
+    const sections = Array.from(document.querySelectorAll("section")).filter(
+      (s) => s.id
+    ) as HTMLElement[];
+    const footer = document.querySelector("footer") as HTMLElement | null;
 
-    const handleScroll = () => {
+    const MOBILE_BREAKPOINT = 768;
+    const MOBILE_FOOTER_THRESHOLD = 1; // ubah ke 0 kalau mau nyentuh dikit langsung mati
+    const DESKTOP_FOOTER_THRESHOLD = 0.80;
+
+    const computeActive = () => {
+      const viewportCenter = window.innerHeight / 2;
+
+      // 1) nentuin section yang “menduduki” center viewport
       let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          const id = section.getAttribute("id");
-          if (id) current = id;
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+          current = section.id;
+          break;
         }
-      });
+      }
+
+      // 2) timpa jika footer terlihat sesuai threshold
+      if (footer) {
+        const f = footer.getBoundingClientRect();
+        const viewportTop = 0;
+        const viewportBottom = window.innerHeight;
+        const intersect =
+          Math.max(0, Math.min(viewportBottom, f.bottom) - Math.max(viewportTop, f.top));
+        const visibleRatio = f.height > 0 ? intersect / f.height : 0;
+
+        const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
+        const threshold = isMobile ? MOBILE_FOOTER_THRESHOLD : DESKTOP_FOOTER_THRESHOLD;
+
+        if (visibleRatio >= threshold) {
+          current = ""; // matikan highlight
+        }
+      }
+
       setActiveSection(current);
 
-      // switch to pill if scroll > 100vh dan bukan di landing
-      if (window.scrollY > window.innerHeight && current !== "landing") {
+      // 3) floating pill logic
+      if (window.scrollY > window.innerHeight && current !== "landing" && current !== "") {
         setIsFloating(true);
       } else {
         setIsFloating(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check
-    return () => window.removeEventListener("scroll", handleScroll);
+    // raf untuk performa di mobile
+    let ticking = false;
+    const onScrollOrResize = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          computeActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+    computeActive(); // initial
+
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+    };
   }, []);
 
-  // Update header height ketika layout berubah
   useEffect(() => {
     const updateHeaderHeight = () => {
       if (headerRef.current) {
@@ -45,20 +89,15 @@ export default function Header() {
         setHeaderHeight(rect.height);
       }
     };
-
     updateHeaderHeight();
     window.addEventListener('resize', updateHeaderHeight);
-    
-    // Update height setelah transisi selesai
     const timer = setTimeout(updateHeaderHeight, 300);
-    
     return () => {
       window.removeEventListener('resize', updateHeaderHeight);
       clearTimeout(timer);
     };
-  }, [isFloating]); // Re-run ketika floating state berubah
+  }, [isFloating]);
 
-  // close mobile menu when clicking outside or on link
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -66,35 +105,24 @@ export default function Header() {
         setIsMobileMenuOpen(false);
       }
     };
-
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMobileMenuOpen]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const getDropdownTopPosition = () => {
     if (isFloating) {
-      // sm: 15px gap, md+: 25px gap
-      const gap = window.innerWidth >= 640 ? 25 : 15; // 640 = md breakpoint
+      const gap = window.innerWidth >= 640 ? 25 : 15;
       return `${headerHeight + gap}px`;
     } else {
       return `${headerHeight + 10}px`;
     }
   };
 
-  // Helper function, check is section active? yayaya
-  const isActiveMobileSection = (sectionId: string) => {
-    return activeSection === sectionId;
-  };
+  const isActiveMobileSection = (sectionId: string) => activeSection === sectionId;
 
-  // nav items mobail
   const navItems = ["education", "skills", "project"];
 
   return (
@@ -126,16 +154,15 @@ export default function Header() {
               <Link
                 key={id}
                 href={`#${id}`}
-                className={`hover:text-yellow-300 transition text-sm xl:text-base whitespace-nowrap ${activeSection === id
-                  ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
-                  : ""}`}
+                className={`hover:text-yellow-300 transition text-sm xl:text-base whitespace-nowrap 
+                  ${activeSection === id ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""}`}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </Link>
             ))}
           </nav>
 
-          {/* desktop resume btn - hidden pada medium devices untuk menghindari overlap */}
+          {/* desktop resume btn */}
           <div className="hidden sm:hidden md:block lg:block flex-shrink-0">
             <Link
               href="/login"
@@ -148,7 +175,7 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* mobile menu area */}
+          {/* mobile menu btn */}
           <div className="md:hidden lg:hidden flex items-center flex-shrink-0">
             <button
               onClick={toggleMobileMenu}
@@ -156,26 +183,16 @@ export default function Header() {
               className="focus:outline-none p-1 flex-shrink-0"
             >
               <svg
-                className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${
-                  isMobileMenuOpen ? 'rotate-90' : ''
-                }`}
+                className={`w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-90' : ''}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
                 viewBox="0 0 24 24"
               >
                 {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 8h16M4 16h16"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
                 )}
               </svg>
             </button>
@@ -183,14 +200,12 @@ export default function Header() {
         </div>
       </header>
 
-       {/* dropdown mobail */}
+      {/* dropdown mobile */}
       <div className={`md:hidden lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
           className={`absolute left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-6 transform transition-all duration-300 origin-top
             ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}
-          style={{ 
-            top: getDropdownTopPosition()
-          }}
+          style={{ top: getDropdownTopPosition() }}
         >
           <nav className="space-y-4">
             {navItems.map(id => (
@@ -199,8 +214,8 @@ export default function Header() {
                 href={`#${id}`}
                 onClick={closeMobileMenu}
                 className={`block text-base transition relative py-1 px-3 rounded-lg
-                  ${isActiveMobileSection(id) 
-                    ? "text-purple-500 bg-purple-500/10 border border-purple-500/20 drop-shadow-[0_0_8px_rgba(191,191,255,0.3)]" 
+                  ${isActiveMobileSection(id)
+                    ? "text-purple-500 bg-purple-500/10 border border-purple-500/20 drop-shadow-[0_0_8px_rgba(191,191,255,0.3)]"
                     : "hover:text-yellow-300 hover:bg-white/5"
                   }`}
               >
@@ -213,22 +228,26 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          
+
           <div className="mt-6 pt-4 border-t border-white/10">
-            <Link 
-              href="/login" 
-              onClick={closeMobileMenu} 
+            <Link
+              href="/login"
+              onClick={closeMobileMenu}
               className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm transition-all duration-200"
             >
               Resume
             </Link>
           </div>
 
-          {/* not so cool, but ill add current indicator */}
+          {/* current indicator */}
           <div className="mt-4 pt-4 border-t border-white/5">
             <div className="text-xs text-white/50 text-center">
               Current: <span className="text-purple-400 font-medium">
-                {activeSection === "landing" ? "Home" : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
+                {activeSection === ""
+                  ? "None"
+                  : activeSection === "landing"
+                    ? "Home"
+                    : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
               </span>
             </div>
           </div>
