@@ -145,7 +145,7 @@ export default function Header() {
                 : ""}
             `}
           >
-            KHZX
+            MADEBYHUZA
           </Link>
 
           {/* desktop nav */}
