@@ -7,42 +7,36 @@ import "aos/dist/aos.css";
 export function Skills() {
   const skillCategories = {
     languages: {
-      title: "Languages that I use for UI/UX Design.",
+      title: "Frontend",
       skills: [
         {
           name: "HTML",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-          description: "buat scaffolding website, ntar di styling pake TailwindCSS."
         },
         {
           name: "CSS",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-          description: "buat desain UI/UX dulu, tapi sekarang pake Tailwind, lebih efisien."
         },
         {
           name: "Tailwind",
           icon: "https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000",
-          description: "buat UI/UX rapi ama bagus, lebih simpel daripada normal CSS."
         },
         {
           name: "TypeScript",
-          icon: "https://img.icons8.com/?size=100&id=Xf1sHBmY73hA&format=png&color=000000",
-          description: "sama kaya JavaScript, 1112 masih belajar dikit\", adaptasi."
+          icon: "https://www.svgrepo.com/show/354478/typescript-icon.svg",
         },
         {
           name: "JavaScript",
           icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-          description: "cuma buat JavaScript basic doang, kaya fitur trigger"
         },
         {
           name: "React",
           icon: "https://img.icons8.com/?size=100&id=asWSSTBrDlTW&format=png&color=000000",
-          description: "buat bikin website sekolah, portofolio, framework banyak library."
         }
       ]
     },
     tools: {
-      title: "Tools that I use for Development & Networking",
+      title: "Tools",
       skills: [
         {
           name: "VS / VS Code",
@@ -50,7 +44,6 @@ export function Skills() {
             "https://img.icons8.com/?size=100&id=ezj3zaVtImPg&format=png&color=000000",
             "https://img.icons8.com/?size=100&id=0OQR1FYCuA9f&format=png&color=000000"
           ],
-          description: "kode editor semua orang, vscode ramah spek, visual studio haus prosesor."
         },
         {
           name: "Wireshark & Nmap",
@@ -58,12 +51,10 @@ export function Skills() {
             "https://www.wireshark.org/_astro/wireshark-logo-big.CkRjSOaC_2eT4Ah.png",
             "https://nmap.org/images/sitelogo-2x.png"
           ],
-          description: "buat cari flag CTF di level yang harus scan-analysis paket TCP/UDP."
         },
         {
           name: "Mikrotik",
           icon: "https://mikrotik.com/img/mtv2/newlogo.svg",
-          description: "buat main main jaringan, disekolah kadang wkkwk, kadang buat testing picoCTF.",
           invert: true
         },
         {
@@ -72,7 +63,6 @@ export function Skills() {
             "https://raw.githubusercontent.com/alacritty/alacritty/master/extra/logo/compat/alacritty-term%2Bscanlines.png",
             "https://sw.kovidgoyal.net/kitty/_static/kitty.svg"
           ],
-          description: "ngapa\" in pakai terminal, enak, efisien, ga ribet kalo mau install package, jadi lebih simpel."
         },
         {
           name: "Git / Github",
@@ -80,7 +70,6 @@ export function Skills() {
             "https://img.icons8.com/?size=100&id=20906&format=png&color=000000",
             "https://img.icons8.com/?size=100&id=LoL4bFzqmAa0&format=png&color=000000"
           ],
-          description: "buat version control, naruh projek, kode, kadang buat cloud gratisan, wkwkwk."
         },
         {
           name: "Android Studio / Netbeans",
@@ -88,17 +77,15 @@ export function Skills() {
             "https://img.icons8.com/?size=100&id=04OFrkjznvcd&format=png&color=000000",
             "https://img.icons8.com/?size=100&id=4djt356tq8UO&format=png&color=000000"
           ],
-          description: "IDE Versatile / cross-platform development, minusnya berat, kalo Netbeans jarang pakai, soalnya kuno."
         }
       ]
     },
     os: {
-      title: "Operating System that I use for non/Productive",
+      title: "OSes",
       skills: [
         {
           name: "Windows 10",
           icon: "https://img.icons8.com/?size=100&id=108792&format=png&color=000000",
-          description: "buat kalo mepet banget, di pc aja sih, Windows 10 ini versi paling stabil aja menurutku, ga kaya windog 11 ui berat, buggy, cpu intensive."
         },
         {
           name: "Archlinux / CachyOS",
@@ -106,12 +93,10 @@ export function Skills() {
             "https://img.icons8.com/?size=100&id=uIXgLv5iSlLJ&format=png&color=000000",
             "https://raw.githubusercontent.com/CachyOS/CachyOS-icons/refs/heads/master/Colored/CachyOS.svg"
           ],
-          description: "aku suka Arch/Cachy linux karena enteng, ga kaya windog, open-source kustomisasi sesuka hati, cocok buwat tukang otak=atik, seperti aku."
         },
         {
           name: "Kali Linux",
           icon: "https://img.icons8.com/?size=100&id=muqMY2QA2VIG&format=png&color=000000",
-          description: "Distro linux berbasis Debian yang ku pake pas LKS atau buat fun belajar aja, ya picoCTF, HTB, OVTW, ya kadang di Arch, tapi ada tools yang kurang.",
           invert: true
         }
       ]
@@ -134,9 +119,8 @@ export function Skills() {
               key={index}
               src={icon}
               alt={`${skill.name} Icon ${index + 1}`}
-              className={`w-20 h-20 ${
-                skill.name === "Wireshark & Nmap" && index === 1 ? "w-fit" : ""
-              }`}
+              className={`w-20 h-20 ${skill.name === "Wireshark & Nmap" && index === 1 ? "w-fit" : ""
+                }`}
             />
           ))}
         </div>
@@ -144,9 +128,8 @@ export function Skills() {
         <img
           src={skill.icon}
           alt={`${skill.name} Icon`}
-          className={`w-20 h-20 mb-4 ${skill.invert ? "invert" : ""} ${
-            skill.name === "Mikrotik" ? "w-fit" : ""
-          }`}
+          className={`w-20 h-20 mb-4 ${skill.invert ? "invert" : ""} ${skill.name === "Mikrotik" ? "w-fit" : ""
+            }`}
         />
       )}
       <h3 className="text-xl font-semibold mb-2 text-white/90">{skill.name}</h3>
