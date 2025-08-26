@@ -130,7 +130,7 @@ export default function Header() {
 
   const isActiveMobileSection = (sectionId: string) => activeSection === sectionId;
 
-  const navItems = ["education", "skills", "project"];
+  const navItems = ["about", "education", "skills", "project"];
 
   return (
     <>

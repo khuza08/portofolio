@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div data-aos="fade-up">
-                <h2 className="text-7xl md:text-8xl lg:text-9xl font-black text-white leading-none tracking-tight">
+                <h2 className="text-7xl md:text-8xl lg:text-9xl font-black bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent leading-none tracking-tight">
                   GET IN<br />
                   TOUCH
                 </h2>
