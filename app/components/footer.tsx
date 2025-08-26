@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="space-y-6" data-aos="fade-left">
               <Link
                 href="/team"
-                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20"
+                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
               >
                 <span className="tracking-wide">ABOUT</span>
                 <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="/invest"
-                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20"
+                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
               >
                 <span className="tracking-wide">RESUME</span>
                 <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ export default function Footer() {
               </Link>
               <Link
                 href="/"
-                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20"
+                className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
               >
                 <span className="tracking-wide">SUPPORT</span>
                 <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ export default function Footer() {
               <div className="flex items-center space-x-6">
 
                 <a
-                  href="https://instagram.com/username"
+                  href="https://instagram.com/huzawastaken"
                   className="text-white/60 hover:text-pink-500 transition-colors p-2 hover:bg-white/5 rounded"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export default function Footer() {
                   <FaInstagram className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://t.me/username"
+                  href="https://t.me/huzawastaken"
                   className="text-white/60 hover:text-blue-400 transition-colors p-2 hover:bg-white/5 rounded"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -87,7 +87,7 @@ export default function Footer() {
                   <FaTelegramPlane className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://github.com/username"
+                  href="https://github.com/khuza08"
                   className="text-white/60 hover:text-gray-300 transition-colors p-2 hover:bg-white/5 rounded"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -96,7 +96,7 @@ export default function Footer() {
                   <FaGithub className="w-6 h-6" />
                 </a>
                 <a
-                  href="https://twitter.com/username"
+                  href="https://twitter.com/unkownhuza"
                   className="text-white/60 hover:text-blue-400 transition-colors p-2 hover:bg-white/5 rounded"
                   target="_blank"
                   rel="noopener noreferrer"
