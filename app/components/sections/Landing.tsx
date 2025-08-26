@@ -25,7 +25,7 @@ export function Landing() {
       }}
     >
       <div className="flex flex-col md:flex-row items-center max-w-6xl w-full gap-12 relative z-10">
-        <div className="flex-1 text-left" data-aos="fade-up" data-aos-delay="100">
+        <div className="flex-1 text-left" data-aos="fade-up"  data-aos-delay="600">
           <h1 className="text-4xl mb-4 font-extrabold bg-gradient-to-b from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
             Welcome to my <span className="italic font-light">portofolio</span>
           </h1>
@@ -37,7 +37,7 @@ export function Landing() {
             "eyes are all the same, but they see differently."
           </p>
         </div>
-        <div className="flex-1 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+        <div className="flex-1 flex justify-center" data-aos="zoom-in" data-aos-delay="600">
           <StarIcon width={96} height={96} fill="#ffffff" />
         </div>
       </div>

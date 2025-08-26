@@ -2,6 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("landing");
@@ -9,6 +12,10 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    AOS.init({ duration: 1200 }); // durasi animasi 1200ms
+  }, []);
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section")).filter(
@@ -137,7 +144,7 @@ export default function Header() {
           }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link
+          <Link data-aos="fade-in"
             href="/"
             className={`text-lg sm:text-xl md:text-2xl font-bold hover:text-yellow-300 transition flex-shrink-0 mr-10
               ${activeSection === "landing"
@@ -151,7 +158,7 @@ export default function Header() {
           {/* desktop nav */}
           <nav className="hidden sm:hidden md:flex lg:flex space-x-4 xl:space-x-6 flex-shrink-0">
             {navItems.map((id) => (
-              <Link
+              <Link data-aos="fade-in"
                 key={id}
                 href={`#${id}`}
                 className={`hover:text-yellow-300 transition text-sm xl:text-base whitespace-nowrap 
@@ -164,7 +171,7 @@ export default function Header() {
 
           {/* desktop resume btn */}
           <div className="hidden sm:hidden md:block lg:block flex-shrink-0">
-            <Link
+            <Link data-aos="fade-in"
               href="/login"
               className={`px-3 xl:px-4 py-2 border border-white/25 transition text-sm xl:text-base whitespace-nowrap ml-10
                 hover:bg-white/10 hover:border-white/30
