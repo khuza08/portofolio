@@ -35,7 +35,7 @@ export default function Footer() {
               {/* Navigasi kanan */}
               <div className="space-y-6" data-aos="fade-left">
                 <Link
-                  href="/team"
+                  href="/pages/resume"
                   className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
                 >
                   <span className="tracking-wide">RESUME</span>
@@ -43,6 +43,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
+
                 
                 {/* Contact button with onClick handler */}
                 <button
