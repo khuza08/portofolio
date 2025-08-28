@@ -34,7 +34,7 @@ export function Landing() {
             <span role="img" aria-label="heart">❤</span>
           </p>
           <p className="text-lg text-white/50 italic" data-aos="fade-up" data-aos-delay="200">
-            "eyes are all the same, but they see differently."
+            z
           </p>
         </div>
         <div className="flex-1 flex justify-center" data-aos="zoom-in" data-aos-delay="600">

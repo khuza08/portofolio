@@ -54,7 +54,7 @@ export function Skills() {
         },
         {
           name: "Mikrotik",
-          icon: "https://mikrotik.com/img/mtv2/newlogo.svg",
+          icon: "https://logo.svgcdn.com/s/mikrotik-dark.png",
           invert: true
         },
         {
