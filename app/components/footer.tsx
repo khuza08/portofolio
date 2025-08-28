@@ -9,7 +9,7 @@ import ContactForm from "../components/ui/ContactForm"; // Import ContactForm co
 
 export default function Footer() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
- 
+
   useEffect(() => {
     AOS.init({ duration: 700, once: true });
   }, []);
@@ -44,7 +44,7 @@ export default function Footer() {
                   </svg>
                 </Link>
 
-                
+
                 {/* Contact button with onClick handler */}
                 <button
                   onClick={handleContactClick}
@@ -55,16 +55,29 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
-                
+
                 <Link
                   href="https://github.com/khuza08/portofolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
                 >
                   <span className="tracking-wide">SUPPORT</span>
-                  <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg
+                    className="w-8 h-8 group-hover:translate-x-2 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </Link>
+
               </div>
             </div>
 
@@ -76,7 +89,7 @@ export default function Footer() {
               </div>
 
               <div className="w-fill  flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
-                  <div className="w-32 border-t border-white/20"></div>
+                <div className="w-32 border-t border-white/20"></div>
                 <div className="flex items-center space-x-6">
 
                   <a
@@ -123,9 +136,9 @@ export default function Footer() {
       </footer>
 
       {/* Contact Form Overlay */}
-      <ContactForm 
-        isOpen={isContactFormOpen} 
-        onClose={() => setIsContactFormOpen(false)} 
+      <ContactForm
+        isOpen={isContactFormOpen}
+        onClose={() => setIsContactFormOpen(false)}
       />
     </>
   );
