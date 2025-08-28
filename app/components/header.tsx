@@ -160,7 +160,7 @@ export default function Header() {
             {navItems.map((id) => (
               <Link data-aos="fade-in"
                 key={id}
-                href={`#${id}`}
+                href={`/#${id}`}
                 className={`hover:text-yellow-300 transition text-sm xl:text-base whitespace-nowrap 
                   ${activeSection === id ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""}`}
               >
@@ -171,15 +171,17 @@ export default function Header() {
 
           {/* desktop resume btn */}
           <div className="hidden sm:hidden md:block lg:block flex-shrink-0">
-            <Link data-aos="fade-in"
-              href="/login"
+            <Link
+              href="/resume"
+              data-aos="fade-in"
               className={`px-3 xl:px-4 py-2 border border-white/25 transition text-sm xl:text-base whitespace-nowrap ml-10
-                hover:bg-white/10 hover:border-white/30
-                ${isFloating ? "rounded-full" : "rounded-lg"}
-              `}
+    hover:bg-white/10 hover:border-white/30
+    ${isFloating ? "rounded-full" : "rounded-lg"}
+  `}
             >
               Resume
             </Link>
+
           </div>
 
           {/* mobile menu btn */}
@@ -218,7 +220,7 @@ export default function Header() {
             {navItems.map(id => (
               <Link
                 key={id}
-                href={`#${id}`}
+                href={`/#${id}`}
                 onClick={closeMobileMenu}
                 className={`block text-base transition relative py-1 px-3 rounded-lg
                   ${isActiveMobileSection(id)
@@ -238,7 +240,7 @@ export default function Header() {
 
           <div className="mt-6 pt-4 border-t border-white/10">
             <Link
-              href="/login"
+              href="/resume"
               onClick={closeMobileMenu}
               className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm transition-all duration-200"
             >

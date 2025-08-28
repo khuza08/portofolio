@@ -35,7 +35,7 @@ export default function Footer() {
               {/* Navigasi kanan */}
               <div className="space-y-6" data-aos="fade-left">
                 <Link
-                  href="/pages/resume"
+                  href="/resume"
                   className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
                 >
                   <span className="tracking-wide">RESUME</span>
