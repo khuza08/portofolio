@@ -1,10 +1,9 @@
 'use client';
-
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
 
 export default function Header() {
   const [activeSection, setActiveSection] = useState("landing");
@@ -12,25 +11,22 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
   const headerRef = useRef<HTMLElement>(null);
-
+  const pathname = usePathname();
+  
   useEffect(() => {
-    AOS.init({ duration: 1200 }); // durasi animasi 1200ms
+    AOS.init({ duration: 1200 });
   }, []);
-
+  
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section")).filter(
       (s) => s.id
     ) as HTMLElement[];
     const footer = document.querySelector("footer") as HTMLElement | null;
-
     const MOBILE_BREAKPOINT = 768;
-    const MOBILE_FOOTER_THRESHOLD = 1; // ubah ke 0 kalau mau nyentuh dikit langsung mati
+    const MOBILE_FOOTER_THRESHOLD = 1;
     const DESKTOP_FOOTER_THRESHOLD = 0.80;
-
     const computeActive = () => {
       const viewportCenter = window.innerHeight / 2;
-
-      // 1) nentuin section yang “menduduki” center viewport
       let current = "";
       for (const section of sections) {
         const rect = section.getBoundingClientRect();
@@ -39,8 +35,6 @@ export default function Header() {
           break;
         }
       }
-
-      // 2) timpa jika footer terlihat sesuai threshold
       if (footer) {
         const f = footer.getBoundingClientRect();
         const viewportTop = 0;
@@ -48,26 +42,19 @@ export default function Header() {
         const intersect =
           Math.max(0, Math.min(viewportBottom, f.bottom) - Math.max(viewportTop, f.top));
         const visibleRatio = f.height > 0 ? intersect / f.height : 0;
-
         const isMobile = window.innerWidth < MOBILE_BREAKPOINT;
         const threshold = isMobile ? MOBILE_FOOTER_THRESHOLD : DESKTOP_FOOTER_THRESHOLD;
-
         if (visibleRatio >= threshold) {
-          current = ""; // matikan highlight
+          current = "";
         }
       }
-
       setActiveSection(current);
-
-      // 3) floating pill logic
       if (window.scrollY > window.innerHeight && current !== "landing" && current !== "") {
         setIsFloating(true);
       } else {
         setIsFloating(false);
       }
     };
-
-    // raf untuk performa di mobile
     let ticking = false;
     const onScrollOrResize = () => {
       if (!ticking) {
@@ -78,17 +65,15 @@ export default function Header() {
         ticking = true;
       }
     };
-
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     window.addEventListener("resize", onScrollOrResize);
-    computeActive(); // initial
-
+    computeActive();
     return () => {
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
     };
   }, []);
-
+  
   useEffect(() => {
     const updateHeaderHeight = () => {
       if (headerRef.current) {
@@ -104,7 +89,7 @@ export default function Header() {
       clearTimeout(timer);
     };
   }, [isFloating]);
-
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -115,10 +100,9 @@ export default function Header() {
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMobileMenuOpen]);
-
+  
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
   const getDropdownTopPosition = () => {
     if (isFloating) {
       const gap = window.innerWidth >= 640 ? 25 : 15;
@@ -127,11 +111,9 @@ export default function Header() {
       return `${headerHeight + 10}px`;
     }
   };
-
   const isActiveMobileSection = (sectionId: string) => activeSection === sectionId;
-
   const navItems = ["about", "education", "skills", "project"];
-
+  
   return (
     <>
       <header
@@ -147,14 +129,14 @@ export default function Header() {
           <Link data-aos="fade-in"
             href="/"
             className={`text-lg sm:text-xl md:text-2xl font-bold hover:text-yellow-300 transition flex-shrink-0 mr-10
-              ${activeSection === "landing"
+              ${activeSection === "landing" && pathname !== '/resume'
                 ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]"
                 : ""}
             `}
           >
             MADEBYHUZA
           </Link>
-
+          
           {/* desktop nav */}
           <nav className="hidden sm:hidden md:flex lg:flex space-x-4 xl:space-x-6 flex-shrink-0">
             {navItems.map((id) => (
@@ -162,28 +144,32 @@ export default function Header() {
                 key={id}
                 href={`/#${id}`}
                 className={`hover:text-yellow-300 transition text-sm xl:text-base whitespace-nowrap 
-                  ${activeSection === id ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" : ""}`}
+                  ${activeSection === id && pathname !== '/resume'
+                    ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" 
+                    : ""}`}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </Link>
             ))}
           </nav>
-
+          
           {/* desktop resume btn */}
           <div className="hidden sm:hidden md:block lg:block flex-shrink-0">
             <Link
               href="/resume"
               data-aos="fade-in"
               className={`px-3 xl:px-4 py-2 border border-white/25 transition text-sm xl:text-base whitespace-nowrap ml-10
-    hover:bg-white/10 hover:border-white/30
-    ${isFloating ? "rounded-full" : "rounded-lg"}
-  `}
+                hover:bg-white/10 hover:border-white/30
+                ${isFloating ? "rounded-full" : "rounded-lg"}
+                ${pathname === '/resume'
+                  ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" 
+                  : ""}
+              `}
             >
               Resume
             </Link>
-
           </div>
-
+          
           {/* mobile menu btn */}
           <div className="md:hidden lg:hidden flex items-center flex-shrink-0">
             <button
@@ -208,7 +194,7 @@ export default function Header() {
           </div>
         </div>
       </header>
-
+      
       {/* dropdown mobile */}
       <div className={`md:hidden lg:hidden fixed inset-0 z-40 pointer-events-none`}>
         <div
@@ -223,40 +209,45 @@ export default function Header() {
                 href={`/#${id}`}
                 onClick={closeMobileMenu}
                 className={`block text-base transition relative py-1 px-3 rounded-lg
-                  ${isActiveMobileSection(id)
+                  ${isActiveMobileSection(id) && pathname !== '/resume'
                     ? "text-purple-500 bg-purple-500/10 border border-purple-500/20 drop-shadow-[0_0_8px_rgba(191,191,255,0.3)]"
                     : "hover:text-yellow-300 hover:bg-white/5"
                   }`}
               >
                 <div className="flex items-center justify-between">
                   <span>{id.charAt(0).toUpperCase() + id.slice(1)}</span>
-                  {isActiveMobileSection(id) && (
+                  {isActiveMobileSection(id) && pathname !== '/resume' && (
                     <div className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></div>
                   )}
                 </div>
               </Link>
             ))}
           </nav>
-
           <div className="mt-6 pt-4 border-t border-white/10">
             <Link
               href="/resume"
               onClick={closeMobileMenu}
-              className="block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm transition-all duration-200"
+              className={`block w-full text-center px-4 py-2 rounded-lg border border-white/25 hover:bg-white/10 hover:border-white/30 text-sm transition-all duration-200
+                ${pathname === '/resume'
+                  ? "text-purple-500 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]" 
+                  : ""}
+              `}
             >
               Resume
             </Link>
           </div>
-
+          
           {/* current indicator */}
           <div className="mt-4 pt-4 border-t border-white/5">
             <div className="text-xs text-white/50 text-center">
               Current: <span className="text-purple-400 font-medium">
-                {activeSection === ""
-                  ? "None"
-                  : activeSection === "landing"
-                    ? "Home"
-                    : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
+                {pathname === '/resume'
+                  ? "Resume"
+                  : activeSection === ""
+                    ? "None"
+                    : activeSection === "landing"
+                      ? "Home"
+                      : activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}
               </span>
             </div>
           </div>
