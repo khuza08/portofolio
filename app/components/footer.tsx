@@ -1,24 +1,34 @@
 'use client';
-
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
 import { FaInstagram, FaTelegramPlane, FaGithub, FaTwitter } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ContactForm from "../components/ui/ContactForm"; // Import ContactForm component
+import ContactForm from "../components/ui/ContactForm";
 
 export default function Footer() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-
+  const pathname = usePathname();
+  
   useEffect(() => {
     AOS.init({ duration: 700, once: true });
   }, []);
-
+  
   const handleContactClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setIsContactFormOpen(true);
   };
-
+  
+  // nentuin resume class
+  const getResumeClasses = () => {
+    const baseClasses = "group flex items-center justify-between text-2xl md:text-3xl font-light py-4 border-b transition-colors";
+    const defaultClasses = "text-white/90 hover:text-white border-white/20 hover:border-white/50";
+    const activeClasses = "text-purple-500 !border-purple-500/50 drop-shadow-[0_0_8px_rgba(191,191,255,0.5)]";
+    
+    return `${baseClasses} ${pathname === '/resume' ? activeClasses : defaultClasses}`;
+  };
+  
   return (
     <>
       <footer className="relative bottom-0 left-0 w-full text-white">
@@ -31,19 +41,17 @@ export default function Footer() {
                   TOUCH
                 </h2>
               </div>
-
               {/* Navigasi kanan */}
               <div className="space-y-6" data-aos="fade-left">
                 <Link
                   href="/resume"
-                  className="group flex items-center justify-between text-2xl md:text-3xl font-light text-white/90 hover:text-white transition-colors py-4 border-b border-white/20 hover:border-white/50"
+                  className={getResumeClasses()}
                 >
                   <span className="tracking-wide">RESUME</span>
                   <svg className="w-8 h-8 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
-
 
                 {/* Contact button with onClick handler */}
                 <button
@@ -55,7 +63,6 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
-
                 <Link
                   href="https://github.com/khuza08/portofolio"
                   target="_blank"
@@ -77,21 +84,17 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-
               </div>
             </div>
-
             {/* bagian bawah */}
             <div data-aos="fade-up" className="flex flex-col lg:flex-row justify-between items-start lg:items-end mt-32 pt-8">
               <div className="mb-8 lg:mb-0">
                 <p className="text-white/80 text-base tracking-wide mb-2 font-medium">MADEBYHUZA</p>
                 <p className="text-white/50 text-sm">©2025 HUZAEVICH KARAMAZOV</p>
               </div>
-
               <div className="w-fill  flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
                 <div className="w-32 border-t border-white/20"></div>
                 <div className="flex items-center space-x-6">
-
                   <a
                     href="https://instagram.com/huzawastaken"
                     className="text-white/60 hover:text-pink-500 transition-colors p-2 hover:bg-white/5 rounded"
@@ -134,7 +137,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
       {/* Contact Form Overlay */}
       <ContactForm
         isOpen={isContactFormOpen}
