@@ -18,6 +18,13 @@ export default function Header() {
   }, []);
   
   useEffect(() => {
+    if (pathname === '/') {
+      setActiveSection("landing");
+      window.dispatchEvent(new Event('scroll'));
+    }
+  }, [pathname]);
+  
+  useEffect(() => {
     const sections = Array.from(document.querySelectorAll("section")).filter(
       (s) => s.id
     ) as HTMLElement[];
@@ -26,6 +33,9 @@ export default function Header() {
     const MOBILE_FOOTER_THRESHOLD = 1;
     const DESKTOP_FOOTER_THRESHOLD = 0.80;
     const computeActive = () => {
+
+      if (pathname === '/resume') return;
+      
       const viewportCenter = window.innerHeight / 2;
       let current = "";
       for (const section of sections) {
@@ -72,7 +82,7 @@ export default function Header() {
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
     };
-  }, []);
+  }, [pathname]); // Tambahkan pathname ke dependencies
   
   useEffect(() => {
     const updateHeaderHeight = () => {
